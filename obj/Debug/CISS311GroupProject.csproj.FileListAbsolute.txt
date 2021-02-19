@@ -7,3 +7,4 @@ X:\ccis\Advanced Agile\CISS311GroupProject\obj\Debug\CISS311GroupProject.csproj.
 X:\ccis\Advanced Agile\CISS311GroupProject\obj\Debug\CISS311GroupProject.csproj.CoreCompileInputs.cache
 X:\ccis\Advanced Agile\CISS311GroupProject\obj\Debug\CISS311GroupProject.exe
 X:\ccis\Advanced Agile\CISS311GroupProject\obj\Debug\CISS311GroupProject.pdb
+X:\ccis\Advanced Agile\CISS311GroupProject\obj\Debug\CISS311GroupProject.MainForm.resources
