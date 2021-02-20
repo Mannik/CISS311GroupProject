@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminAddStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminAddStudent.Designer.cs">
+      <DependentUpon>AdminAddStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\Employee.cs" />
     <Compile Include="Classes\Student.cs" />
     <Compile Include="MainForm.cs">
@@ -56,6 +62,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdminAddStudent.resx">
+      <DependentUpon>AdminAddStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
