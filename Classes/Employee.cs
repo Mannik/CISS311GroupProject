@@ -9,14 +9,14 @@ namespace CISS311GroupProject.Classes
     class Employee
     {
         //fields
-        private int employeeID;
+        private int employeeId;
         private string firstName, lastName;
         private bool isAdmin;
 
-        public int EmployeeID
+        public int EmployeeId
         {
-            get { return employeeID; }
-            set { employeeID = value; }
+            get { return employeeId; }
+            set { employeeId = value; }
         }
 
         public string FirstName
@@ -38,9 +38,9 @@ namespace CISS311GroupProject.Classes
         }
 
         //constructor
-        public Employee(int employeeID, string firstName, string lastName, bool isAdmin)
+        public Employee(int employeeId, string firstName, string lastName, bool isAdmin)
         {
-            this.employeeID = employeeID;
+            this.employeeId = employeeId;
             this.firstName = firstName;
             this.lastName = lastName;
             this.isAdmin = isAdmin;

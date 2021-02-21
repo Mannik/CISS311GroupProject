@@ -9,13 +9,13 @@ namespace CISS311GroupProject.Classes
     class Student
     {
         //fields
-        private int studentID, credits;
+        private int studentId, credits;
         private string firstName, lastName;
 
-        public int StudentID
+        public int StudentId
         {
-            get { return studentID; }
-            set { studentID = value; }
+            get { return studentId; }
+            set { studentId = value; }
         }
 
         public string FirstName
@@ -37,9 +37,9 @@ namespace CISS311GroupProject.Classes
         }
 
         //constructor
-        public Student(int studentID, string firstName, string lastName, int credits)
+        public Student(int studentId, string firstName, string lastName, int credits)
         {
-            this.studentID = studentID;
+            this.studentId = studentId;
             this.firstName = firstName;
             this.lastName = lastName;
             this.credits = credits;

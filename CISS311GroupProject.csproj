@@ -59,6 +59,7 @@
     <Compile Include="AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Course.cs" />
     <Compile Include="Classes\Employee.cs" />
     <Compile Include="Classes\Student.cs" />
     <Compile Include="InstructorForm.cs">
