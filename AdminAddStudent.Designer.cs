@@ -28,59 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnSaveAddAnother = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.tbFirstName = new System.Windows.Forms.TextBox();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.saveAddAnotherButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.firstNameTextBox = new System.Windows.Forms.TextBox();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
-            this.tbLastName = new System.Windows.Forms.TextBox();
-            this.cbIncomingCredits = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lastNameTextBox = new System.Windows.Forms.TextBox();
+            this.incomingCreditsCheckBox = new System.Windows.Forms.CheckBox();
+            this.hoursTextBox = new System.Windows.Forms.TextBox();
             this.lbCreditHours = new System.Windows.Forms.Label();
             this.lblAddNewStudent = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnSave
+            // saveButton
             // 
-            this.btnSave.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(36, 323);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(115, 35);
-            this.btnSave.TabIndex = 0;
-            this.btnSave.Text = "&Save && Close";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.saveButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveButton.Location = new System.Drawing.Point(36, 323);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(115, 35);
+            this.saveButton.TabIndex = 0;
+            this.saveButton.Text = "&Save && Close";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
-            // btnSaveAddAnother
+            // saveAddAnotherButton
             // 
-            this.btnSaveAddAnother.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveAddAnother.Location = new System.Drawing.Point(174, 323);
-            this.btnSaveAddAnother.Name = "btnSaveAddAnother";
-            this.btnSaveAddAnother.Size = new System.Drawing.Size(115, 35);
-            this.btnSaveAddAnother.TabIndex = 1;
-            this.btnSaveAddAnother.Text = "Save && &New";
-            this.btnSaveAddAnother.UseVisualStyleBackColor = true;
-            this.btnSaveAddAnother.Click += new System.EventHandler(this.btnSaveAddAnother_Click);
+            this.saveAddAnotherButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveAddAnotherButton.Location = new System.Drawing.Point(174, 323);
+            this.saveAddAnotherButton.Name = "saveAddAnotherButton";
+            this.saveAddAnotherButton.Size = new System.Drawing.Size(115, 35);
+            this.saveAddAnotherButton.TabIndex = 1;
+            this.saveAddAnotherButton.Text = "Save && &New";
+            this.saveAddAnotherButton.UseVisualStyleBackColor = true;
+            this.saveAddAnotherButton.Click += new System.EventHandler(this.saveAddAnotherButton_Click);
             // 
-            // btnCancel
+            // cancelButton
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(312, 323);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(115, 35);
-            this.btnCancel.TabIndex = 2;
-            this.btnCancel.Text = "&Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.cancelButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelButton.Location = new System.Drawing.Point(312, 323);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(115, 35);
+            this.cancelButton.TabIndex = 2;
+            this.cancelButton.Text = "&Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // tbFirstName
+            // firstNameTextBox
             // 
-            this.tbFirstName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFirstName.Location = new System.Drawing.Point(146, 73);
-            this.tbFirstName.Name = "tbFirstName";
-            this.tbFirstName.Size = new System.Drawing.Size(226, 26);
-            this.tbFirstName.TabIndex = 3;
+            this.firstNameTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstNameTextBox.Location = new System.Drawing.Point(146, 73);
+            this.firstNameTextBox.Name = "firstNameTextBox";
+            this.firstNameTextBox.Size = new System.Drawing.Size(226, 26);
+            this.firstNameTextBox.TabIndex = 3;
             // 
             // lblFirstName
             // 
@@ -102,32 +102,32 @@
             this.lblLastName.TabIndex = 5;
             this.lblLastName.Text = "Last Name";
             // 
-            // tbLastName
+            // lastNameTextBox
             // 
-            this.tbLastName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbLastName.Location = new System.Drawing.Point(146, 114);
-            this.tbLastName.Name = "tbLastName";
-            this.tbLastName.Size = new System.Drawing.Size(226, 26);
-            this.tbLastName.TabIndex = 6;
+            this.lastNameTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastNameTextBox.Location = new System.Drawing.Point(146, 114);
+            this.lastNameTextBox.Name = "lastNameTextBox";
+            this.lastNameTextBox.Size = new System.Drawing.Size(226, 26);
+            this.lastNameTextBox.TabIndex = 6;
             // 
-            // cbIncomingCredits
+            // incomingCreditsCheckBox
             // 
-            this.cbIncomingCredits.AutoSize = true;
-            this.cbIncomingCredits.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbIncomingCredits.Location = new System.Drawing.Point(52, 197);
-            this.cbIncomingCredits.Name = "cbIncomingCredits";
-            this.cbIncomingCredits.Size = new System.Drawing.Size(203, 23);
-            this.cbIncomingCredits.TabIndex = 7;
-            this.cbIncomingCredits.Text = "Student has incoming credits.";
-            this.cbIncomingCredits.UseVisualStyleBackColor = true;
+            this.incomingCreditsCheckBox.AutoSize = true;
+            this.incomingCreditsCheckBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.incomingCreditsCheckBox.Location = new System.Drawing.Point(52, 197);
+            this.incomingCreditsCheckBox.Name = "incomingCreditsCheckBox";
+            this.incomingCreditsCheckBox.Size = new System.Drawing.Size(203, 23);
+            this.incomingCreditsCheckBox.TabIndex = 7;
+            this.incomingCreditsCheckBox.Text = "Student has incoming credits.";
+            this.incomingCreditsCheckBox.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // hoursTextBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(146, 155);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 26);
-            this.textBox1.TabIndex = 8;
+            this.hoursTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hoursTextBox.Location = new System.Drawing.Point(146, 155);
+            this.hoursTextBox.Name = "hoursTextBox";
+            this.hoursTextBox.Size = new System.Drawing.Size(100, 26);
+            this.hoursTextBox.TabIndex = 8;
             // 
             // lbCreditHours
             // 
@@ -156,17 +156,18 @@
             this.ClientSize = new System.Drawing.Size(470, 403);
             this.Controls.Add(this.lblAddNewStudent);
             this.Controls.Add(this.lbCreditHours);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.cbIncomingCredits);
-            this.Controls.Add(this.tbLastName);
+            this.Controls.Add(this.hoursTextBox);
+            this.Controls.Add(this.incomingCreditsCheckBox);
+            this.Controls.Add(this.lastNameTextBox);
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.lblFirstName);
-            this.Controls.Add(this.tbFirstName);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnSaveAddAnother);
-            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.firstNameTextBox);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.saveAddAnotherButton);
+            this.Controls.Add(this.saveButton);
             this.Name = "AdminAddStudent";
             this.Text = "Administrator: Add Student";
+            this.Load += new System.EventHandler(this.AdminAddStudent_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,15 +175,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnSaveAddAnother;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.TextBox tbFirstName;
+        private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Button saveAddAnotherButton;
+        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.TextBox firstNameTextBox;
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.Label lblLastName;
-        private System.Windows.Forms.TextBox tbLastName;
-        private System.Windows.Forms.CheckBox cbIncomingCredits;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox lastNameTextBox;
+        private System.Windows.Forms.CheckBox incomingCreditsCheckBox;
+        private System.Windows.Forms.TextBox hoursTextBox;
         private System.Windows.Forms.Label lbCreditHours;
         private System.Windows.Forms.Label lblAddNewStudent;
     }
