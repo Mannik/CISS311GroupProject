@@ -8,3 +8,14 @@ X:\ccis\Advanced Agile\CISS311GroupProject\obj\Debug\CISS311GroupProject.csproj.
 X:\ccis\Advanced Agile\CISS311GroupProject\obj\Debug\CISS311GroupProject.exe
 X:\ccis\Advanced Agile\CISS311GroupProject\obj\Debug\CISS311GroupProject.pdb
 X:\ccis\Advanced Agile\CISS311GroupProject\obj\Debug\CISS311GroupProject.MainForm.resources
+C:\Users\brent_000\Documents\CISS311GroupProject\obj\Debug\CISS311GroupProject.csprojAssemblyReference.cache
+C:\Users\brent_000\Documents\CISS311GroupProject\obj\Debug\CISS311GroupProject.AdminAddStudent.resources
+C:\Users\brent_000\Documents\CISS311GroupProject\obj\Debug\CISS311GroupProject.MainForm.resources
+C:\Users\brent_000\Documents\CISS311GroupProject\obj\Debug\CISS311GroupProject.Properties.Resources.resources
+C:\Users\brent_000\Documents\CISS311GroupProject\obj\Debug\CISS311GroupProject.csproj.GenerateResource.cache
+C:\Users\brent_000\Documents\CISS311GroupProject\obj\Debug\CISS311GroupProject.csproj.CoreCompileInputs.cache
+C:\Users\brent_000\Documents\CISS311GroupProject\obj\Debug\CISS311GroupProject.exe
+C:\Users\brent_000\Documents\CISS311GroupProject\obj\Debug\CISS311GroupProject.pdb
+C:\Users\brent_000\Documents\CISS311GroupProject\bin\Debug\CISS311GroupProject.exe.config
+C:\Users\brent_000\Documents\CISS311GroupProject\bin\Debug\CISS311GroupProject.exe
+C:\Users\brent_000\Documents\CISS311GroupProject\bin\Debug\CISS311GroupProject.pdb
