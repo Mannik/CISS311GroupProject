@@ -53,8 +53,20 @@
     <Compile Include="AdminAddStudent.Designer.cs">
       <DependentUpon>AdminAddStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\Employee.cs" />
     <Compile Include="Classes\Student.cs" />
+    <Compile Include="InstructorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InstructorForm.Designer.cs">
+      <DependentUpon>InstructorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,8 +75,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentForm.Designer.cs">
+      <DependentUpon>StudentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TinyCollegeDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TinyCollegeDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminAddStudent.resx">
       <DependentUpon>AdminAddStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -88,6 +114,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="TinyCollegeDataSet.xsc">
+      <DependentUpon>TinyCollegeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TinyCollegeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TinyCollegeDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TinyCollegeDataSet.xss">
+      <DependentUpon>TinyCollegeDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

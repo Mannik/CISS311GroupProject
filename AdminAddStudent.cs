@@ -25,7 +25,7 @@ namespace CISS311GroupProject
             //todo replace the connection string with the correct one for our project
             //setup the connection string
             connString = ConfigurationManager.ConnectionStrings
-                ["CISS311GroupProject.Properties.Settings.TeachingDBConnectionString"].ConnectionString;
+                ["CISS311GroupProject.Properties.Settings.TinyCollegeConnectionString"].ConnectionString;
         }
 
         private void saveButton_Click(object sender, EventArgs e)
