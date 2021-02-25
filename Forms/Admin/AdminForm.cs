@@ -28,5 +28,11 @@ namespace CISS311GroupProject
             //close form
             Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Forms.Admin.AdminAddInstructor adminAddInstructor = new Forms.Admin.AdminAddInstructor();
+            adminAddInstructor.ShowDialog();
+        }
     }
 }

@@ -53,6 +53,12 @@
     <Compile Include="Forms\Admin\AddCourseForm.Designer.cs">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Admin\AdminAddInstructor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\AdminAddInstructor.Designer.cs">
+      <DependentUpon>AdminAddInstructor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Admin\AdminAddStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,12 @@
     </Compile>
     <Compile Include="Forms\Admin\AdministratorViewCourses.Designer.cs">
       <DependentUpon>AdministratorViewCourses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\EmployeeSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\EmployeeSearchForm.Designer.cs">
+      <DependentUpon>EmployeeSearchForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Instructor\InstructorForm.cs">
       <SubType>Form</SubType>
@@ -108,6 +120,9 @@
     <EmbeddedResource Include="Forms\Admin\AddCourseForm.resx">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\AdminAddInstructor.resx">
+      <DependentUpon>AdminAddInstructor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\AdminAddStudent.resx">
       <DependentUpon>AdminAddStudent.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\AdministratorViewCourses.resx">
       <DependentUpon>AdministratorViewCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\EmployeeSearchForm.resx">
+      <DependentUpon>EmployeeSearchForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

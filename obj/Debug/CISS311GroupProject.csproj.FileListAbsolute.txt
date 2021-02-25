@@ -24,3 +24,5 @@ X:\ccis\Advanced Agile\CISS311GroupProject\obj\Debug\CISS311GroupProject.AdminFo
 X:\ccis\Advanced Agile\CISS311GroupProject\obj\Debug\CISS311GroupProject.ManageCourseForm.resources
 X:\ccis\Advanced Agile\CISS311GroupProject\obj\Debug\CISS311GroupProject.AddCourseForm.resources
 X:\ccis\Advanced Agile\CISS311GroupProject\obj\Debug\CISS311GroupProject.AdministratorViewCourses.resources
+X:\ccis\Advanced Agile\CISS311GroupProject\obj\Debug\CISS311GroupProject.Forms.Admin.AdminAddInstructor.resources
+X:\ccis\Advanced Agile\CISS311GroupProject\obj\Debug\CISS311GroupProject.Forms.Admin.EmployeeSearchForm.resources
