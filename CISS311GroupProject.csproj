@@ -47,45 +47,57 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminAddStudent.cs">
+    <Compile Include="Forms\Admin\AddCourseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminAddStudent.Designer.cs">
+    <Compile Include="Forms\Admin\AddCourseForm.Designer.cs">
+      <DependentUpon>AddCourseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\AdminAddStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\AdminAddStudent.Designer.cs">
       <DependentUpon>AdminAddStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminForm.cs">
+    <Compile Include="Forms\Admin\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminForm.Designer.cs">
+    <Compile Include="Forms\Admin\AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Course.cs" />
     <Compile Include="Classes\Employee.cs" />
     <Compile Include="Classes\Student.cs" />
-    <Compile Include="InstructorForm.cs">
+    <Compile Include="Forms\Admin\AdministratorViewCourses.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InstructorForm.Designer.cs">
+    <Compile Include="Forms\Admin\AdministratorViewCourses.Designer.cs">
+      <DependentUpon>AdministratorViewCourses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Instructor\InstructorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Instructor\InstructorForm.Designer.cs">
       <DependentUpon>InstructorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManageCourseForm.cs">
+    <Compile Include="Forms\Admin\ManageCourseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManageCourseForm.Designer.cs">
+    <Compile Include="Forms\Admin\ManageCourseForm.Designer.cs">
       <DependentUpon>ManageCourseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StudentForm.cs">
+    <Compile Include="Forms\Student\StudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StudentForm.Designer.cs">
+    <Compile Include="Forms\Student\StudentForm.Designer.cs">
       <DependentUpon>StudentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="TinyCollegeDataSet.Designer.cs">
@@ -93,16 +105,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TinyCollegeDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AdminAddStudent.resx">
+    <EmbeddedResource Include="Forms\Admin\AddCourseForm.resx">
+      <DependentUpon>AddCourseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\AdminAddStudent.resx">
       <DependentUpon>AdminAddStudent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminForm.resx">
+    <EmbeddedResource Include="Forms\Admin\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Forms\Admin\AdministratorViewCourses.resx">
+      <DependentUpon>AdministratorViewCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManageCourseForm.resx">
+    <EmbeddedResource Include="Forms\Admin\ManageCourseForm.resx">
       <DependentUpon>ManageCourseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -124,6 +142,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="README.md" />
     <None Include="TinyCollegeDataSet.xsc">
       <DependentUpon>TinyCollegeDataSet.xsd</DependentUpon>
     </None>
@@ -144,6 +163,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\img\TinyCollege.ico" />
+    <Content Include="Resources\DatabaseStructure.sql" />
     <Content Include="Resources\img\TinyCollege.png" />
     <Content Include="Resources\img\TinyCollegeShadow.png" />
   </ItemGroup>

@@ -21,3 +21,6 @@ C:\Users\brent_000\Documents\CISS311GroupProject\bin\Debug\CISS311GroupProject.e
 C:\Users\brent_000\Documents\CISS311GroupProject\bin\Debug\CISS311GroupProject.pdb
 X:\ccis\Advanced Agile\CISS311GroupProject\obj\Debug\CISS311GroupProject.AdminAddStudent.resources
 X:\ccis\Advanced Agile\CISS311GroupProject\obj\Debug\CISS311GroupProject.AdminForm.resources
+X:\ccis\Advanced Agile\CISS311GroupProject\obj\Debug\CISS311GroupProject.ManageCourseForm.resources
+X:\ccis\Advanced Agile\CISS311GroupProject\obj\Debug\CISS311GroupProject.AddCourseForm.resources
+X:\ccis\Advanced Agile\CISS311GroupProject\obj\Debug\CISS311GroupProject.AdministratorViewCourses.resources
