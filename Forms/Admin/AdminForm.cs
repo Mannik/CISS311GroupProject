@@ -40,5 +40,11 @@ namespace CISS311GroupProject
             Forms.Admin.AdminViewClass adminViewClass = new Forms.Admin.AdminViewClass();
             adminViewClass.ShowDialog();
         }
+
+        private void manageCourseButton_Click(object sender, EventArgs e)
+        {
+            ManageCourseForm manageCourseForm = new ManageCourseForm();
+            manageCourseForm.ShowDialog();
+        }
     }
 }

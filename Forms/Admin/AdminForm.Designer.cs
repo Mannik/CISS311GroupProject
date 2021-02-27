@@ -34,6 +34,7 @@
             this.addEmployeeBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.viewCoursesBtn = new System.Windows.Forms.Button();
+            this.manageCourseButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,11 +104,23 @@
             this.viewCoursesBtn.UseVisualStyleBackColor = true;
             this.viewCoursesBtn.Click += new System.EventHandler(this.viewCoursesBtn_Click);
             // 
+            // manageCourseButton
+            // 
+            this.manageCourseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manageCourseButton.Location = new System.Drawing.Point(12, 324);
+            this.manageCourseButton.Name = "manageCourseButton";
+            this.manageCourseButton.Size = new System.Drawing.Size(596, 72);
+            this.manageCourseButton.TabIndex = 6;
+            this.manageCourseButton.Text = "Manage Course Info";
+            this.manageCourseButton.UseVisualStyleBackColor = true;
+            this.manageCourseButton.Click += new System.EventHandler(this.manageCourseButton_Click);
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 324);
+            this.ClientSize = new System.Drawing.Size(800, 402);
+            this.Controls.Add(this.manageCourseButton);
             this.Controls.Add(this.viewCoursesBtn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.addEmployeeBtn);
@@ -129,5 +142,6 @@
         private System.Windows.Forms.Button addEmployeeBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button viewCoursesBtn;
+        private System.Windows.Forms.Button manageCourseButton;
     }
 }
