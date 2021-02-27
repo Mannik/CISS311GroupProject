@@ -34,5 +34,11 @@ namespace CISS311GroupProject
             Forms.Admin.AdminAddInstructor adminAddInstructor = new Forms.Admin.AdminAddInstructor();
             adminAddInstructor.ShowDialog();
         }
+
+        private void viewCoursesBtn_Click(object sender, EventArgs e)
+        {
+            Forms.Admin.AdminViewClass adminViewClass = new Forms.Admin.AdminViewClass();
+            adminViewClass.ShowDialog();
+        }
     }
 }

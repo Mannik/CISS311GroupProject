@@ -33,7 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -79,6 +81,18 @@
     </Compile>
     <Compile Include="Forms\Admin\AdministratorViewCourses.Designer.cs">
       <DependentUpon>AdministratorViewCourses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\AdminViewClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\AdminViewClass.Designer.cs">
+      <DependentUpon>AdminViewClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\CourseSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\CourseSearchForm.Designer.cs">
+      <DependentUpon>CourseSearchForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Admin\EmployeeSearchForm.cs">
       <SubType>Form</SubType>
@@ -131,6 +145,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\AdministratorViewCourses.resx">
       <DependentUpon>AdministratorViewCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\AdminViewClass.resx">
+      <DependentUpon>AdminViewClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\CourseSearchForm.resx">
+      <DependentUpon>CourseSearchForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\EmployeeSearchForm.resx">
       <DependentUpon>EmployeeSearchForm.cs</DependentUpon>
