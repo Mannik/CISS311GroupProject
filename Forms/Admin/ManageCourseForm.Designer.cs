@@ -31,68 +31,211 @@ namespace CISS311GroupProject
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageCourseForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.courseDataGridView = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.updatedSeatsTextBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.seatsAvailableLabel = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.newCourseTitleTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.currentCourseLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.findButton = new System.Windows.Forms.Button();
+            this.courseIdTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.updateButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
+            this.yesRadioButton = new System.Windows.Forms.RadioButton();
+            this.noRadioButton = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.courseDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.courseDataGridView);
+            this.groupBox1.Controls.Add(this.noRadioButton);
+            this.groupBox1.Controls.Add(this.yesRadioButton);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.updatedSeatsTextBox);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.seatsAvailableLabel);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.newCourseTitleTextBox);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.currentCourseLabel);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.findButton);
+            this.groupBox1.Controls.Add(this.courseIdTextBox);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(775, 333);
+            this.groupBox1.Size = new System.Drawing.Size(456, 303);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Update Course Information";
             // 
-            // courseDataGridView
+            // label6
             // 
-            this.courseDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.courseDataGridView.Location = new System.Drawing.Point(7, 20);
-            this.courseDataGridView.Name = "courseDataGridView";
-            this.courseDataGridView.Size = new System.Drawing.Size(762, 307);
-            this.courseDataGridView.TabIndex = 0;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 255);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(131, 20);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Course Available:";
+            // 
+            // updatedSeatsTextBox
+            // 
+            this.updatedSeatsTextBox.Location = new System.Drawing.Point(343, 206);
+            this.updatedSeatsTextBox.Name = "updatedSeatsTextBox";
+            this.updatedSeatsTextBox.Size = new System.Drawing.Size(35, 26);
+            this.updatedSeatsTextBox.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(216, 207);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(121, 20);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Updated Seats:";
+            // 
+            // seatsAvailableLabel
+            // 
+            this.seatsAvailableLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.seatsAvailableLabel.Location = new System.Drawing.Point(175, 206);
+            this.seatsAvailableLabel.Name = "seatsAvailableLabel";
+            this.seatsAvailableLabel.Size = new System.Drawing.Size(35, 26);
+            this.seatsAvailableLabel.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(15, 212);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(122, 20);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Seats Available:";
+            // 
+            // newCourseTitleTextBox
+            // 
+            this.newCourseTitleTextBox.Location = new System.Drawing.Point(175, 153);
+            this.newCourseTitleTextBox.Name = "newCourseTitleTextBox";
+            this.newCourseTitleTextBox.Size = new System.Drawing.Size(203, 26);
+            this.newCourseTitleTextBox.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(11, 153);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(157, 20);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Change Course Title:";
+            // 
+            // currentCourseLabel
+            // 
+            this.currentCourseLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.currentCourseLabel.Location = new System.Drawing.Point(175, 101);
+            this.currentCourseLabel.Name = "currentCourseLabel";
+            this.currentCourseLabel.Size = new System.Drawing.Size(203, 26);
+            this.currentCourseLabel.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(11, 102);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 20);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Course Title:";
+            // 
+            // findButton
+            // 
+            this.findButton.Location = new System.Drawing.Point(303, 41);
+            this.findButton.Name = "findButton";
+            this.findButton.Size = new System.Drawing.Size(75, 30);
+            this.findButton.TabIndex = 2;
+            this.findButton.Text = "&Find";
+            this.findButton.UseVisualStyleBackColor = true;
+            this.findButton.Click += new System.EventHandler(this.findButton_Click);
+            // 
+            // courseIdTextBox
+            // 
+            this.courseIdTextBox.Location = new System.Drawing.Point(136, 43);
+            this.courseIdTextBox.Name = "courseIdTextBox";
+            this.courseIdTextBox.Size = new System.Drawing.Size(100, 26);
+            this.courseIdTextBox.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Course ID:";
             // 
             // updateButton
             // 
             this.updateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.updateButton.Location = new System.Drawing.Point(20, 394);
+            this.updateButton.Location = new System.Drawing.Point(13, 322);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(125, 30);
             this.updateButton.TabIndex = 1;
             this.updateButton.Text = "&Update Course";
             this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // deleteButton
             // 
             this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.deleteButton.Location = new System.Drawing.Point(369, 394);
+            this.deleteButton.Location = new System.Drawing.Point(173, 322);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(125, 30);
             this.deleteButton.TabIndex = 2;
             this.deleteButton.Text = "&Delete Course";
             this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // exitButton
             // 
             this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.exitButton.Location = new System.Drawing.Point(663, 394);
+            this.exitButton.Location = new System.Drawing.Point(344, 322);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(125, 30);
             this.exitButton.TabIndex = 3;
             this.exitButton.Text = "E&xit";
             this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // yesRadioButton
+            // 
+            this.yesRadioButton.AutoSize = true;
+            this.yesRadioButton.Location = new System.Drawing.Point(175, 257);
+            this.yesRadioButton.Name = "yesRadioButton";
+            this.yesRadioButton.Size = new System.Drawing.Size(60, 24);
+            this.yesRadioButton.TabIndex = 12;
+            this.yesRadioButton.TabStop = true;
+            this.yesRadioButton.Text = "YES";
+            this.yesRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // noRadioButton
+            // 
+            this.noRadioButton.AutoSize = true;
+            this.noRadioButton.Location = new System.Drawing.Point(303, 257);
+            this.noRadioButton.Name = "noRadioButton";
+            this.noRadioButton.Size = new System.Drawing.Size(50, 24);
+            this.noRadioButton.TabIndex = 13;
+            this.noRadioButton.TabStop = true;
+            this.noRadioButton.Text = "NO";
+            this.noRadioButton.UseVisualStyleBackColor = true;
             // 
             // ManageCourseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(478, 369);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.updateButton);
@@ -100,8 +243,9 @@ namespace CISS311GroupProject
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManageCourseForm";
             this.Text = "Manage Course Form";
+            this.Load += new System.EventHandler(this.ManageCourseForm_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.courseDataGridView)).EndInit();
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -109,9 +253,22 @@ namespace CISS311GroupProject
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView courseDataGridView;
         private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox updatedSeatsTextBox;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label seatsAvailableLabel;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox newCourseTitleTextBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label currentCourseLabel;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button findButton;
+        private System.Windows.Forms.TextBox courseIdTextBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton noRadioButton;
+        private System.Windows.Forms.RadioButton yesRadioButton;
     }
 }

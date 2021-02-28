@@ -29,15 +29,22 @@ namespace CISS311GroupProject
             Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            AddCourseForm addCourseForm = new AddCourseForm();
-            addCourseForm.ShowDialog();
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
+            Forms.Admin.AdminAddInstructor adminAddInstructor = new Forms.Admin.AdminAddInstructor();
+            adminAddInstructor.ShowDialog();
+        }
 
+        private void viewCoursesBtn_Click(object sender, EventArgs e)
+        {
+            Forms.Admin.AdminViewClass adminViewClass = new Forms.Admin.AdminViewClass();
+            adminViewClass.ShowDialog();
+        }
+
+        private void manageCourseButton_Click(object sender, EventArgs e)
+        {
+            ManageCourseForm manageCourseForm = new ManageCourseForm();
+            manageCourseForm.ShowDialog();
         }
     }
 }

@@ -30,9 +30,11 @@
         {
             this.addStudentBtn = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.addCourseBtn = new System.Windows.Forms.Button();
+            this.addEmployeeBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.viewCoursesBtn = new System.Windows.Forms.Button();
+            this.manageCourseButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,27 +60,26 @@
             this.closeBtn.UseVisualStyleBackColor = true;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
-            // button1
+            // addCourseBtn
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(12, 168);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(596, 72);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Add New Course";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.addCourseBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addCourseBtn.Location = new System.Drawing.Point(12, 168);
+            this.addCourseBtn.Name = "addCourseBtn";
+            this.addCourseBtn.Size = new System.Drawing.Size(596, 72);
+            this.addCourseBtn.TabIndex = 2;
+            this.addCourseBtn.Text = "Add New Course";
+            this.addCourseBtn.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // addEmployeeBtn
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(12, 90);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(596, 72);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Add New Instructor";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.addEmployeeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addEmployeeBtn.Location = new System.Drawing.Point(12, 90);
+            this.addEmployeeBtn.Name = "addEmployeeBtn";
+            this.addEmployeeBtn.Size = new System.Drawing.Size(596, 72);
+            this.addEmployeeBtn.TabIndex = 3;
+            this.addEmployeeBtn.Text = "Add New Instructor";
+            this.addEmployeeBtn.UseVisualStyleBackColor = true;
+            this.addEmployeeBtn.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox1
             // 
@@ -92,14 +93,38 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
+            // viewCoursesBtn
+            // 
+            this.viewCoursesBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewCoursesBtn.Location = new System.Drawing.Point(12, 246);
+            this.viewCoursesBtn.Name = "viewCoursesBtn";
+            this.viewCoursesBtn.Size = new System.Drawing.Size(596, 72);
+            this.viewCoursesBtn.TabIndex = 5;
+            this.viewCoursesBtn.Text = "View Course Grades";
+            this.viewCoursesBtn.UseVisualStyleBackColor = true;
+            this.viewCoursesBtn.Click += new System.EventHandler(this.viewCoursesBtn_Click);
+            // 
+            // manageCourseButton
+            // 
+            this.manageCourseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manageCourseButton.Location = new System.Drawing.Point(12, 324);
+            this.manageCourseButton.Name = "manageCourseButton";
+            this.manageCourseButton.Size = new System.Drawing.Size(596, 72);
+            this.manageCourseButton.TabIndex = 6;
+            this.manageCourseButton.Text = "Manage Course Info";
+            this.manageCourseButton.UseVisualStyleBackColor = true;
+            this.manageCourseButton.Click += new System.EventHandler(this.manageCourseButton_Click);
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 252);
+            this.ClientSize = new System.Drawing.Size(800, 402);
+            this.Controls.Add(this.manageCourseButton);
+            this.Controls.Add(this.viewCoursesBtn);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.addEmployeeBtn);
+            this.Controls.Add(this.addCourseBtn);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.addStudentBtn);
             this.Name = "AdminForm";
@@ -113,8 +138,10 @@
 
         private System.Windows.Forms.Button addStudentBtn;
         private System.Windows.Forms.Button closeBtn;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button addCourseBtn;
+        private System.Windows.Forms.Button addEmployeeBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button viewCoursesBtn;
+        private System.Windows.Forms.Button manageCourseButton;
     }
 }
