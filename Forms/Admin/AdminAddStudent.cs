@@ -88,13 +88,21 @@ namespace CISS311GroupProject
         {
             //place any code here that needs to be ran on form load
             //connect to the sql server, query the database, collect the data, and display it on the form
-            using (conn = new SqlConnection(connString))
-            using (SqlDataAdapter adapter = new SqlDataAdapter
-                ("SELECT count(*) as \"studentCount\" FROM student", conn))
+           try
             {
-                DataTable studentTable = new DataTable();
-                adapter.Fill(studentTable);
-                studentCountLabel.Text = "studentCount";
+                using (conn = new SqlConnection(connString))
+                using (SqlDataAdapter adapter = new SqlDataAdapter
+                    ("SELECT count(*) as \"studentCount\" FROM student", conn))
+                {
+                    DataTable studentTable = new DataTable();
+                    adapter.Fill(studentTable);
+                    studentCountLabel.Text = "studentCount";
+
+                }
+
+            }
+            catch
+            {
 
             }
         }
