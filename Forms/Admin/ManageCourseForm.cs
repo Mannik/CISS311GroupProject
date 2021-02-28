@@ -55,6 +55,14 @@ namespace CISS311GroupProject
                     courseId = int.Parse(dr["courseId"].ToString());
                     currentCourseLabel.Text = dr["title"].ToString();
                     seatsAvailableLabel.Text = dr["seats"].ToString();
+                    if (yesRadioButton.Checked)
+                    {
+                       
+                    }
+                    else
+                    {
+                        noRadioButton.Checked = true;
+                    }
                     // enables textboxes and buttons once it finds a course by Id
                     updatedSeatsTextBox.Enabled = true;
                     newCourseTitleTextBox.Enabled = true;
@@ -78,8 +86,14 @@ namespace CISS311GroupProject
                 comd.Parameters.AddWithValue("@courseId", courseId);
                 comd.Parameters.AddWithValue("@title", newCourseTitleTextBox.Text);
                 comd.Parameters.AddWithValue("@seats", updatedSeatsTextBox.Text);
-                comd.Parameters.AddWithValue("@isAvailable", yesCheckBox.Checked);// not sure how 
-                // to get the isAvailable to work with the form. Please Help.
+                if (yesRadioButton.Checked)
+                {
+                    comd.Parameters.AddWithValue("@isAvailable", 1);
+                }
+                else
+                {
+                    comd.Parameters.AddWithValue("@isAvailable", 0);
+                }
                 comd.ExecuteScalar();
                 ResetForm();
             }
@@ -112,8 +126,8 @@ namespace CISS311GroupProject
             newCourseTitleTextBox.Clear();
             seatsAvailableLabel.Text = string.Empty;
             updatedSeatsTextBox.Clear();
-            yesCheckBox.Checked = false;
-            noCheckBox.Checked = false;
+            yesRadioButton.Checked = false;
+            noRadioButton.Checked = false;
             courseIdTextBox.Focus();
             deleteButton.Enabled = false;
             updateButton.Enabled = false;

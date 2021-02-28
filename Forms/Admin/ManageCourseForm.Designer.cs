@@ -31,30 +31,30 @@ namespace CISS311GroupProject
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageCourseForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.updatedSeatsTextBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.seatsAvailableLabel = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.newCourseTitleTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.currentCourseLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.findButton = new System.Windows.Forms.Button();
+            this.courseIdTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.updateButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.courseIdTextBox = new System.Windows.Forms.TextBox();
-            this.findButton = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.currentCourseLabel = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.newCourseTitleTextBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.seatsAvailableLabel = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.updatedSeatsTextBox = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.yesCheckBox = new System.Windows.Forms.CheckBox();
-            this.noCheckBox = new System.Windows.Forms.CheckBox();
+            this.yesRadioButton = new System.Windows.Forms.RadioButton();
+            this.noRadioButton = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.noCheckBox);
-            this.groupBox1.Controls.Add(this.yesCheckBox);
+            this.groupBox1.Controls.Add(this.noRadioButton);
+            this.groupBox1.Controls.Add(this.yesRadioButton);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.updatedSeatsTextBox);
             this.groupBox1.Controls.Add(this.label5);
@@ -74,6 +74,107 @@ namespace CISS311GroupProject
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Update Course Information";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 255);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(131, 20);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Course Available:";
+            // 
+            // updatedSeatsTextBox
+            // 
+            this.updatedSeatsTextBox.Location = new System.Drawing.Point(343, 206);
+            this.updatedSeatsTextBox.Name = "updatedSeatsTextBox";
+            this.updatedSeatsTextBox.Size = new System.Drawing.Size(35, 26);
+            this.updatedSeatsTextBox.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(216, 207);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(121, 20);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Updated Seats:";
+            // 
+            // seatsAvailableLabel
+            // 
+            this.seatsAvailableLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.seatsAvailableLabel.Location = new System.Drawing.Point(175, 206);
+            this.seatsAvailableLabel.Name = "seatsAvailableLabel";
+            this.seatsAvailableLabel.Size = new System.Drawing.Size(35, 26);
+            this.seatsAvailableLabel.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(15, 212);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(122, 20);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Seats Available:";
+            // 
+            // newCourseTitleTextBox
+            // 
+            this.newCourseTitleTextBox.Location = new System.Drawing.Point(175, 153);
+            this.newCourseTitleTextBox.Name = "newCourseTitleTextBox";
+            this.newCourseTitleTextBox.Size = new System.Drawing.Size(203, 26);
+            this.newCourseTitleTextBox.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(11, 153);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(157, 20);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Change Course Title:";
+            // 
+            // currentCourseLabel
+            // 
+            this.currentCourseLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.currentCourseLabel.Location = new System.Drawing.Point(175, 101);
+            this.currentCourseLabel.Name = "currentCourseLabel";
+            this.currentCourseLabel.Size = new System.Drawing.Size(203, 26);
+            this.currentCourseLabel.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(11, 102);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 20);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Course Title:";
+            // 
+            // findButton
+            // 
+            this.findButton.Location = new System.Drawing.Point(303, 41);
+            this.findButton.Name = "findButton";
+            this.findButton.Size = new System.Drawing.Size(75, 30);
+            this.findButton.TabIndex = 2;
+            this.findButton.Text = "&Find";
+            this.findButton.UseVisualStyleBackColor = true;
+            this.findButton.Click += new System.EventHandler(this.findButton_Click);
+            // 
+            // courseIdTextBox
+            // 
+            this.courseIdTextBox.Location = new System.Drawing.Point(136, 43);
+            this.courseIdTextBox.Name = "courseIdTextBox";
+            this.courseIdTextBox.Size = new System.Drawing.Size(100, 26);
+            this.courseIdTextBox.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Course ID:";
             // 
             // updateButton
             // 
@@ -108,126 +209,27 @@ namespace CISS311GroupProject
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
-            // label1
+            // yesRadioButton
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Course ID:";
+            this.yesRadioButton.AutoSize = true;
+            this.yesRadioButton.Location = new System.Drawing.Point(175, 257);
+            this.yesRadioButton.Name = "yesRadioButton";
+            this.yesRadioButton.Size = new System.Drawing.Size(60, 24);
+            this.yesRadioButton.TabIndex = 12;
+            this.yesRadioButton.TabStop = true;
+            this.yesRadioButton.Text = "YES";
+            this.yesRadioButton.UseVisualStyleBackColor = true;
             // 
-            // courseIdTextBox
+            // noRadioButton
             // 
-            this.courseIdTextBox.Location = new System.Drawing.Point(136, 43);
-            this.courseIdTextBox.Name = "courseIdTextBox";
-            this.courseIdTextBox.Size = new System.Drawing.Size(100, 26);
-            this.courseIdTextBox.TabIndex = 1;
-            // 
-            // findButton
-            // 
-            this.findButton.Location = new System.Drawing.Point(303, 41);
-            this.findButton.Name = "findButton";
-            this.findButton.Size = new System.Drawing.Size(75, 30);
-            this.findButton.TabIndex = 2;
-            this.findButton.Text = "&Find";
-            this.findButton.UseVisualStyleBackColor = true;
-            this.findButton.Click += new System.EventHandler(this.findButton_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 102);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Course Title:";
-            // 
-            // currentCourseLabel
-            // 
-            this.currentCourseLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.currentCourseLabel.Location = new System.Drawing.Point(175, 101);
-            this.currentCourseLabel.Name = "currentCourseLabel";
-            this.currentCourseLabel.Size = new System.Drawing.Size(203, 26);
-            this.currentCourseLabel.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 153);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(157, 20);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Change Course Title:";
-            // 
-            // newCourseTitleTextBox
-            // 
-            this.newCourseTitleTextBox.Location = new System.Drawing.Point(175, 153);
-            this.newCourseTitleTextBox.Name = "newCourseTitleTextBox";
-            this.newCourseTitleTextBox.Size = new System.Drawing.Size(203, 26);
-            this.newCourseTitleTextBox.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 212);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 20);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Seats Available:";
-            // 
-            // seatsAvailableLabel
-            // 
-            this.seatsAvailableLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.seatsAvailableLabel.Location = new System.Drawing.Point(175, 206);
-            this.seatsAvailableLabel.Name = "seatsAvailableLabel";
-            this.seatsAvailableLabel.Size = new System.Drawing.Size(35, 26);
-            this.seatsAvailableLabel.TabIndex = 8;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(216, 207);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(121, 20);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Updated Seats:";
-            // 
-            // updatedSeatsTextBox
-            // 
-            this.updatedSeatsTextBox.Location = new System.Drawing.Point(343, 206);
-            this.updatedSeatsTextBox.Name = "updatedSeatsTextBox";
-            this.updatedSeatsTextBox.Size = new System.Drawing.Size(35, 26);
-            this.updatedSeatsTextBox.TabIndex = 10;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 255);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(131, 20);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Course Available:";
-            // 
-            // yesCheckBox
-            // 
-            this.yesCheckBox.AutoSize = true;
-            this.yesCheckBox.Location = new System.Drawing.Point(175, 255);
-            this.yesCheckBox.Name = "yesCheckBox";
-            this.yesCheckBox.Size = new System.Drawing.Size(61, 24);
-            this.yesCheckBox.TabIndex = 12;
-            this.yesCheckBox.Text = "YES";
-            this.yesCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // noCheckBox
-            // 
-            this.noCheckBox.AutoSize = true;
-            this.noCheckBox.Location = new System.Drawing.Point(303, 255);
-            this.noCheckBox.Name = "noCheckBox";
-            this.noCheckBox.Size = new System.Drawing.Size(51, 24);
-            this.noCheckBox.TabIndex = 13;
-            this.noCheckBox.Text = "NO";
-            this.noCheckBox.UseVisualStyleBackColor = true;
+            this.noRadioButton.AutoSize = true;
+            this.noRadioButton.Location = new System.Drawing.Point(303, 257);
+            this.noRadioButton.Name = "noRadioButton";
+            this.noRadioButton.Size = new System.Drawing.Size(50, 24);
+            this.noRadioButton.TabIndex = 13;
+            this.noRadioButton.TabStop = true;
+            this.noRadioButton.Text = "NO";
+            this.noRadioButton.UseVisualStyleBackColor = true;
             // 
             // ManageCourseForm
             // 
@@ -254,8 +256,6 @@ namespace CISS311GroupProject
         private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button exitButton;
-        private System.Windows.Forms.CheckBox noCheckBox;
-        private System.Windows.Forms.CheckBox yesCheckBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox updatedSeatsTextBox;
         private System.Windows.Forms.Label label5;
@@ -268,5 +268,7 @@ namespace CISS311GroupProject
         private System.Windows.Forms.Button findButton;
         private System.Windows.Forms.TextBox courseIdTextBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton noRadioButton;
+        private System.Windows.Forms.RadioButton yesRadioButton;
     }
 }
