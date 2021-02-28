@@ -15,6 +15,7 @@ namespace CISS311GroupProject
     public partial class AddCourseForm : Form
     {
         string connectionString;
+        string connString;
         SqlConnection conn;
         public AddCourseForm()
         {
@@ -30,12 +31,12 @@ namespace CISS311GroupProject
         private void AddCourseForm_Load(object sender, EventArgs e)
         {
             using (conn = new SqlConnection(connectionString))
-            using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT FirstName, LastName, EmployeeID FROM Employee = ", conn))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Employee", conn))
             {
                 DataTable courseTable = new DataTable();
                 adapter.Fill(courseTable);
-                instructorComboBox.DisplayMember = String.Format($"{0} {1}", "FirstName", "LastName");
-                instructorComboBox.ValueMember = "EmployeeID";
+                instructorComboBox.DisplayMember = String.Format($"{0} {1}", "firstName", "lastName");
+                instructorComboBox.ValueMember = "employeeID";
                 instructorComboBox.DataSource = courseTable;
             }
         }

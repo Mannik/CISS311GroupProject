@@ -28,5 +28,16 @@ namespace CISS311GroupProject
             //close form
             Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddCourseForm addCourseForm = new AddCourseForm();
+            addCourseForm.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

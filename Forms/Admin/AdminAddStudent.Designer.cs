@@ -39,6 +39,8 @@
             this.hoursTextBox = new System.Windows.Forms.TextBox();
             this.lbCreditHours = new System.Windows.Forms.Label();
             this.lblAddNewStudent = new System.Windows.Forms.Label();
+            this.studentCountLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // saveButton
@@ -149,11 +151,31 @@
             this.lblAddNewStudent.TabIndex = 10;
             this.lblAddNewStudent.Text = "Add New Student";
             // 
+            // studentCountLabel
+            // 
+            this.studentCountLabel.AutoSize = true;
+            this.studentCountLabel.Location = new System.Drawing.Point(423, 378);
+            this.studentCountLabel.Name = "studentCountLabel";
+            this.studentCountLabel.Size = new System.Drawing.Size(28, 13);
+            this.studentCountLabel.TabIndex = 11;
+            this.studentCountLabel.Text = "data";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(339, 378);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Student Count:";
+            // 
             // AdminAddStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(470, 403);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.studentCountLabel);
             this.Controls.Add(this.lblAddNewStudent);
             this.Controls.Add(this.lbCreditHours);
             this.Controls.Add(this.hoursTextBox);
@@ -186,5 +208,7 @@
         private System.Windows.Forms.TextBox hoursTextBox;
         private System.Windows.Forms.Label lbCreditHours;
         private System.Windows.Forms.Label lblAddNewStudent;
+        private System.Windows.Forms.Label studentCountLabel;
+        private System.Windows.Forms.Label label2;
     }
 }
