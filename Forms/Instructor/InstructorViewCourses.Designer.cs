@@ -45,6 +45,7 @@ namespace CISS311GroupProject.Forms.Instructor
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.totalSeatCountLabel = new System.Windows.Forms.Label();
+            this.closeButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -212,11 +213,22 @@ namespace CISS311GroupProject.Forms.Instructor
             this.totalSeatCountLabel.Size = new System.Drawing.Size(0, 17);
             this.totalSeatCountLabel.TabIndex = 10;
             // 
+            // closeButton
+            // 
+            this.closeButton.Location = new System.Drawing.Point(227, 489);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(125, 54);
+            this.closeButton.TabIndex = 4;
+            this.closeButton.Text = "Close";
+            this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            // 
             // InstructorViewCourses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(589, 525);
+            this.ClientSize = new System.Drawing.Size(589, 555);
+            this.Controls.Add(this.closeButton);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.instructorComboBox);
@@ -252,5 +264,6 @@ namespace CISS311GroupProject.Forms.Instructor
         private System.Windows.Forms.Label courseNameLabel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label totalSeatCountLabel;
+        private System.Windows.Forms.Button closeButton;
     }
 }

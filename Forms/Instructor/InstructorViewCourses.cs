@@ -91,5 +91,10 @@ namespace CISS311GroupProject.Forms.Instructor
                 
             }
         }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
