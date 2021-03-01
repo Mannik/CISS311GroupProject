@@ -16,5 +16,11 @@ namespace CISS311GroupProject
         {
             InitializeComponent();
         }
+
+        private void viewCoursesBtn_Click(object sender, EventArgs e)
+        {
+            Forms.Instructor.InstructorViewCourses viewCourses = new Forms.Instructor.InstructorViewCourses();
+            viewCourses.ShowDialog();
+        }
     }
 }

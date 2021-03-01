@@ -413,6 +413,8 @@ namespace CISS311GroupProject {
             
             private global::System.Data.DataColumn columnseats;
             
+            private global::System.Data.DataColumn columnmaxSeats;
+            
             private global::System.Data.DataColumn columnisAvailable;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -482,6 +484,14 @@ namespace CISS311GroupProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn maxSeatsColumn {
+                get {
+                    return this.columnmaxSeats;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn isAvailableColumn {
                 get {
                     return this.columnisAvailable;
@@ -525,13 +535,14 @@ namespace CISS311GroupProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public courseRow AddcourseRow(string title, employeeRow parentemployeeRowByfk_course_employee, byte seats, bool isAvailable) {
+            public courseRow AddcourseRow(string title, employeeRow parentemployeeRowByfk_course_employee, byte seats, byte maxSeats, bool isAvailable) {
                 courseRow rowcourseRow = ((courseRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         title,
                         null,
                         seats,
+                        maxSeats,
                         isAvailable};
                 if ((parentemployeeRowByfk_course_employee != null)) {
                     columnValuesArray[2] = parentemployeeRowByfk_course_employee[0];
@@ -569,6 +580,7 @@ namespace CISS311GroupProject {
                 this.columntitle = base.Columns["title"];
                 this.columnemployeeId = base.Columns["employeeId"];
                 this.columnseats = base.Columns["seats"];
+                this.columnmaxSeats = base.Columns["maxSeats"];
                 this.columnisAvailable = base.Columns["isAvailable"];
             }
             
@@ -583,6 +595,8 @@ namespace CISS311GroupProject {
                 base.Columns.Add(this.columnemployeeId);
                 this.columnseats = new global::System.Data.DataColumn("seats", typeof(byte), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnseats);
+                this.columnmaxSeats = new global::System.Data.DataColumn("maxSeats", typeof(byte), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmaxSeats);
                 this.columnisAvailable = new global::System.Data.DataColumn("isAvailable", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnisAvailable);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -597,6 +611,7 @@ namespace CISS311GroupProject {
                 this.columntitle.MaxLength = 100;
                 this.columnemployeeId.AllowDBNull = false;
                 this.columnseats.AllowDBNull = false;
+                this.columnmaxSeats.AllowDBNull = false;
                 this.columnisAvailable.AllowDBNull = false;
             }
             
@@ -1687,6 +1702,17 @@ namespace CISS311GroupProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public byte maxSeats {
+                get {
+                    return ((byte)(this[this.tablecourse.maxSeatsColumn]));
+                }
+                set {
+                    this[this.tablecourse.maxSeatsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool isAvailable {
                 get {
                     return ((bool)(this[this.tablecourse.isAvailableColumn]));
@@ -2194,42 +2220,44 @@ namespace CISS311GroupProject.TinyCollegeDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("title", "title");
             tableMapping.ColumnMappings.Add("employeeId", "employeeId");
             tableMapping.ColumnMappings.Add("seats", "seats");
+            tableMapping.ColumnMappings.Add("maxSeats", "maxSeats");
             tableMapping.ColumnMappings.Add("isAvailable", "isAvailable");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[course] WHERE (([courseId] = @Original_courseId) AND ([title] " +
-                "= @Original_title) AND ([employeeId] = @Original_employeeId) AND ([seats] = @Ori" +
-                "ginal_seats) AND ([isAvailable] = @Original_isAvailable))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[course] WHERE (([courseId] = @Original_courseId) AND ([title] = @Original_title) AND ([employeeId] = @Original_employeeId) AND ([seats] = @Original_seats) AND ([maxSeats] = @Original_maxSeats) AND ([isAvailable] = @Original_isAvailable))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_courseId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "courseId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_title", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "title", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_employeeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "employeeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_seats", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "seats", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_maxSeats", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "maxSeats", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_isAvailable", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isAvailable", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[course] ([title], [employeeId], [seats], [isAvailable]) VALUES" +
-                " (@title, @employeeId, @seats, @isAvailable);\r\nSELECT courseId, title, employeeI" +
-                "d, seats, isAvailable FROM course WHERE (courseId = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[course] ([title], [employeeId], [seats], [maxSeats], [isAvailable]) VALUES (@title, @employeeId, @seats, @maxSeats, @isAvailable);
+SELECT courseId, title, employeeId, seats, maxSeats, isAvailable FROM course WHERE (courseId = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@title", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "title", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@employeeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "employeeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@seats", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "seats", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@maxSeats", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "maxSeats", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@isAvailable", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isAvailable", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[course] SET [title] = @title, [employeeId] = @employeeId, [seats] = @seats, [isAvailable] = @isAvailable WHERE (([courseId] = @Original_courseId) AND ([title] = @Original_title) AND ([employeeId] = @Original_employeeId) AND ([seats] = @Original_seats) AND ([isAvailable] = @Original_isAvailable));
-SELECT courseId, title, employeeId, seats, isAvailable FROM course WHERE (courseId = @courseId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[course] SET [title] = @title, [employeeId] = @employeeId, [seats] = @seats, [maxSeats] = @maxSeats, [isAvailable] = @isAvailable WHERE (([courseId] = @Original_courseId) AND ([title] = @Original_title) AND ([employeeId] = @Original_employeeId) AND ([seats] = @Original_seats) AND ([maxSeats] = @Original_maxSeats) AND ([isAvailable] = @Original_isAvailable));
+SELECT courseId, title, employeeId, seats, maxSeats, isAvailable FROM course WHERE (courseId = @courseId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@title", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "title", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@employeeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "employeeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@seats", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "seats", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@maxSeats", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "maxSeats", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@isAvailable", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isAvailable", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_courseId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "courseId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_title", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "title", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_employeeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "employeeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_seats", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "seats", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_maxSeats", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "maxSeats", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_isAvailable", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isAvailable", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@courseId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "courseId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -2247,7 +2275,7 @@ SELECT courseId, title, employeeId, seats, isAvailable FROM course WHERE (course
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT courseId, title, employeeId, seats, isAvailable FROM dbo.course";
+            this._commandCollection[0].CommandText = "SELECT courseId, title, employeeId, seats, maxSeats, isAvailable FROM dbo.course";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2308,7 +2336,7 @@ SELECT courseId, title, employeeId, seats, isAvailable FROM course WHERE (course
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_courseId, string Original_title, int Original_employeeId, byte Original_seats, bool Original_isAvailable) {
+        public virtual int Delete(int Original_courseId, string Original_title, int Original_employeeId, byte Original_seats, byte Original_maxSeats, bool Original_isAvailable) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_courseId));
             if ((Original_title == null)) {
                 throw new global::System.ArgumentNullException("Original_title");
@@ -2318,7 +2346,8 @@ SELECT courseId, title, employeeId, seats, isAvailable FROM course WHERE (course
             }
             this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_employeeId));
             this.Adapter.DeleteCommand.Parameters[3].Value = ((byte)(Original_seats));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((bool)(Original_isAvailable));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((byte)(Original_maxSeats));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((bool)(Original_isAvailable));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2339,7 +2368,7 @@ SELECT courseId, title, employeeId, seats, isAvailable FROM course WHERE (course
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string title, int employeeId, byte seats, bool isAvailable) {
+        public virtual int Insert(string title, int employeeId, byte seats, byte maxSeats, bool isAvailable) {
             if ((title == null)) {
                 throw new global::System.ArgumentNullException("title");
             }
@@ -2348,7 +2377,8 @@ SELECT courseId, title, employeeId, seats, isAvailable FROM course WHERE (course
             }
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(employeeId));
             this.Adapter.InsertCommand.Parameters[2].Value = ((byte)(seats));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((bool)(isAvailable));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((byte)(maxSeats));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((bool)(isAvailable));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2369,7 +2399,7 @@ SELECT courseId, title, employeeId, seats, isAvailable FROM course WHERE (course
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string title, int employeeId, byte seats, bool isAvailable, int Original_courseId, string Original_title, int Original_employeeId, byte Original_seats, bool Original_isAvailable, int courseId) {
+        public virtual int Update(string title, int employeeId, byte seats, byte maxSeats, bool isAvailable, int Original_courseId, string Original_title, int Original_employeeId, byte Original_seats, byte Original_maxSeats, bool Original_isAvailable, int courseId) {
             if ((title == null)) {
                 throw new global::System.ArgumentNullException("title");
             }
@@ -2378,18 +2408,20 @@ SELECT courseId, title, employeeId, seats, isAvailable FROM course WHERE (course
             }
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(employeeId));
             this.Adapter.UpdateCommand.Parameters[2].Value = ((byte)(seats));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((bool)(isAvailable));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_courseId));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((byte)(maxSeats));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((bool)(isAvailable));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_courseId));
             if ((Original_title == null)) {
                 throw new global::System.ArgumentNullException("Original_title");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_title));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_title));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_employeeId));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((byte)(Original_seats));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((bool)(Original_isAvailable));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(courseId));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_employeeId));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((byte)(Original_seats));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((byte)(Original_maxSeats));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((bool)(Original_isAvailable));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(courseId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2410,8 +2442,8 @@ SELECT courseId, title, employeeId, seats, isAvailable FROM course WHERE (course
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string title, int employeeId, byte seats, bool isAvailable, int Original_courseId, string Original_title, int Original_employeeId, byte Original_seats, bool Original_isAvailable) {
-            return this.Update(title, employeeId, seats, isAvailable, Original_courseId, Original_title, Original_employeeId, Original_seats, Original_isAvailable, Original_courseId);
+        public virtual int Update(string title, int employeeId, byte seats, byte maxSeats, bool isAvailable, int Original_courseId, string Original_title, int Original_employeeId, byte Original_seats, byte Original_maxSeats, bool Original_isAvailable) {
+            return this.Update(title, employeeId, seats, maxSeats, isAvailable, Original_courseId, Original_title, Original_employeeId, Original_seats, Original_maxSeats, Original_isAvailable, Original_courseId);
         }
     }
     

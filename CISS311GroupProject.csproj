@@ -106,6 +106,12 @@
     <Compile Include="Forms\Instructor\InstructorForm.Designer.cs">
       <DependentUpon>InstructorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Instructor\InstructorViewCourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Instructor\InstructorViewCourses.Designer.cs">
+      <DependentUpon>InstructorViewCourses.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\EmployeeSearchForm.resx">
       <DependentUpon>EmployeeSearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Instructor\InstructorForm.resx">
+      <DependentUpon>InstructorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Instructor\InstructorViewCourses.resx">
+      <DependentUpon>InstructorViewCourses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
