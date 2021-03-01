@@ -16,5 +16,11 @@ namespace CISS311GroupProject
         {
             InitializeComponent();
         }
+
+        private void enrollButton_Click(object sender, EventArgs e)
+        {
+            StudentEnrollCourse studentEnrollCourse = new StudentEnrollCourse();
+            studentEnrollCourse.ShowDialog();
+        }
     }
 }

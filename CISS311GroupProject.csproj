@@ -124,6 +124,12 @@
     <Compile Include="Forms\Admin\ManageCourseForm.Designer.cs">
       <DependentUpon>ManageCourseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Student\StudentEnrollCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student\StudentEnrollCourse.Designer.cs">
+      <DependentUpon>StudentEnrollCourse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Forms\Student\StudentForm.cs">
@@ -173,6 +179,12 @@
     <EmbeddedResource Include="Forms\Admin\ManageCourseForm.resx">
       <DependentUpon>ManageCourseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student\StudentEnrollCourse.resx">
+      <DependentUpon>StudentEnrollCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student\StudentForm.resx">
+      <DependentUpon>StudentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -213,6 +225,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\img\TinyCollege.ico" />
+    <Content Include="Resources\after_action_Trigger_update_availability.sql" />
     <Content Include="Resources\DatabaseStructure.sql" />
     <Content Include="Resources\img\TinyCollege.png" />
     <Content Include="Resources\img\TinyCollegeShadow.png" />
