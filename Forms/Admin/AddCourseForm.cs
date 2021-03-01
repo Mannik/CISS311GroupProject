@@ -30,13 +30,13 @@ namespace CISS311GroupProject
         private void AddCourseForm_Load(object sender, EventArgs e)
         {
             using (conn = new SqlConnection(connectionString))
-            using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT FirstName, LastName, EmployeeID FROM Employee = ", conn))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT firstName + ' ' + lastName AS Name, employeeID FROM employee", conn))
             {
-                DataTable courseTable = new DataTable();
-                adapter.Fill(courseTable);
-                instructorComboBox.DisplayMember = String.Format($"{0} {1}", "FirstName", "LastName");
+                DataTable instructorTable = new DataTable();
+                adapter.Fill(instructorTable);
+                instructorComboBox.DisplayMember = "Name";
                 instructorComboBox.ValueMember = "EmployeeID";
-                instructorComboBox.DataSource = courseTable;
+                instructorComboBox.DataSource = instructorTable;
             }
         }
 
@@ -48,16 +48,38 @@ namespace CISS311GroupProject
                 if (int.TryParse(seatsTextBox.Text, out result))
                 {
                     using (conn = new SqlConnection(connectionString))
-                    using (SqlCommand comd = new SqlCommand("INSERT INTO Course (Title, Seats, Instructor) VALUES (@Title, @Seats, @InstructorID)", conn))
+                    using (SqlCommand checkComd = new SqlCommand("SELECT title FROM course WHERE title = @Title", conn))
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(checkComd))
                     {
-                        comd.Parameters.AddWithValue("@Title", courseTextBox.Text);
-                        comd.Parameters.AddWithValue("@Seats", result);
-                        comd.Parameters.AddWithValue("@InstructorID", instructorComboBox.SelectedValue);
+                        checkComd.Parameters.AddWithValue("@Title", courseTextBox.Text);
+                        DataTable existingCourse = new DataTable();
+                        adapter.Fill(existingCourse);
+                        if(existingCourse.Rows.Count < 1)
+                        {
+                            using (SqlCommand comd = new SqlCommand("INSERT INTO course (title, seats, employeeId, isAvailable) VALUES (@Title, @Seats, @InstructorID, 0)", conn))
+                            {
+                                comd.Parameters.AddWithValue("@Title", courseTextBox.Text);
+                                comd.Parameters.AddWithValue("@Seats", result);
+                                comd.Parameters.AddWithValue("@InstructorID", instructorComboBox.SelectedValue);
+                                conn.Open();
+                                comd.ExecuteScalar();
+                                MessageBox.Show("Course added successfully.");
+                                courseTextBox.Clear();
+                                seatsTextBox.Clear();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("A Course with this name already exists.");
+                            courseTextBox.Clear();
+                        }
                     }
+                   
                 }
                 else
                 {
                     MessageBox.Show("Please enter a valid number of seats.");
+                    seatsTextBox.Clear();
                 }
             }
             else

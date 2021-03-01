@@ -69,6 +69,7 @@
             this.addCourseBtn.TabIndex = 2;
             this.addCourseBtn.Text = "Add New Course";
             this.addCourseBtn.UseVisualStyleBackColor = true;
+            this.addCourseBtn.Click += new System.EventHandler(this.addCourseBtn_Click);
             // 
             // addEmployeeBtn
             // 

@@ -46,5 +46,11 @@ namespace CISS311GroupProject
             ManageCourseForm manageCourseForm = new ManageCourseForm();
             manageCourseForm.ShowDialog();
         }
+
+        private void addCourseBtn_Click(object sender, EventArgs e)
+        {
+            AddCourseForm addCourseForm = new AddCourseForm();
+            addCourseForm.ShowDialog();
+        }
     }
 }
