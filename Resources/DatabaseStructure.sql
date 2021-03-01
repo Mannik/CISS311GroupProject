@@ -14,7 +14,7 @@ CREATE TABLE student
 
 (
 
-           studentId         INT NOT NULL IDENTITY,
+           studentId         INT NOT NULL IDENTITY(10000, 1),
 
            firstName NVARCHAR(15) NOT NULL,
 		   
@@ -31,7 +31,7 @@ CREATE TABLE employee
 
 (
 
-           employeeId         INT NOT NULL IDENTITY,
+           employeeId INT NOT NULL IDENTITY(1000, 1),
 		   
 		   firstName NVARCHAR(15) NOT NULL,
 		   
@@ -55,6 +55,8 @@ CREATE TABLE course
            employeeId INT NOT NULL,
 		   
 		   seats TINYINT NOT NULL,
+		   
+		   maxSeats tinyint NOT NULL,
 		   
 		   isAvailable BIT NOT NULL,
 
@@ -92,4 +94,9 @@ INSERT INTO student (firstName, lastName, credits) VALUES ('Steven', 'Applegarth
 INSERT INTO employee(firstName, lastName, isAdmin) VALUES ('Mark', 'Chambers', 1);
 INSERT INTO employee(firstName, lastName, isAdmin) VALUES ('Felicha', 'Cross', 0);
 
-INSERT INTO course(title, employeeId, seats, isAvailable) VALUES ('Agile Delevopment', 1, 22, 1);
+INSERT INTO course(title, employeeId, seats, maxSeats, isAvailable) VALUES ('Agile Delevopment', 1000, 2, 22, 1);
+INSERT INTO course(title, employeeId, seats, maxSeats, isAvailable) VALUES ('Software Design', 1001, 1, 22, 1);
+
+INSERT INTO courseXstudent(studentId, courseId, grade) VALUES (10000, 1, 'A');
+INSERT INTO courseXstudent(studentId, courseId, grade) VALUES (10001, 1, 'C');
+INSERT INTO courseXstudent(studentId, courseId, grade) VALUES (10002, 2, 'B');
