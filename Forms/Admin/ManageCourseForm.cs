@@ -55,9 +55,11 @@ namespace CISS311GroupProject
                     courseId = int.Parse(dr["courseId"].ToString());
                     currentCourseLabel.Text = dr["title"].ToString();
                     maxSeatingLabel.Text = dr["maxSeats"].ToString();
-                    if (yesRadioButton.Checked)
-                    {
-                       
+                    // if statement to display the isAvailable bool to radiobuttons
+                    // courtesy to Zachary for the help
+                    if (dr["isAvailable"].ToString() == "True")
+                    {// courtesy to Zachary for the help
+                        yesRadioButton.Checked = true;
                     }
                     else
                     {
@@ -84,8 +86,28 @@ namespace CISS311GroupProject
                 conn.Open();
                 // parameters to pass for update 
                 comd.Parameters.AddWithValue("@courseId", courseId);
-                comd.Parameters.AddWithValue("@title", newCourseTitleTextBox.Text);
-                comd.Parameters.AddWithValue("@maxSeats", updatedmaxSeatingTextBox.Text);
+                // If Statement to update title/ if no new title passes parameter from current title label
+                // courtesy to Zachary for the help
+                if (!string.IsNullOrEmpty(newCourseTitleTextBox.Text))
+                {
+                    comd.Parameters.AddWithValue("@title", newCourseTitleTextBox.Text);
+                }
+                else
+                {
+                    comd.Parameters.AddWithValue("@title", currentCourseLabel.Text);
+                }
+                // if statement to update maxSeats/ if no new update passes current maxseats
+                // courtesy to Zachary for the help
+                if (!string.IsNullOrEmpty(updatedmaxSeatingTextBox.Text))
+                {
+                    comd.Parameters.AddWithValue("@maxSeats", updatedmaxSeatingTextBox.Text);
+                }
+                else
+                {
+                    comd.Parameters.AddWithValue("@maxSeats", maxSeatingLabel.Text);
+                }
+            
+                // updates the bool of isAvailable in the database
                 if (yesRadioButton.Checked)
                 {
                     comd.Parameters.AddWithValue("@isAvailable", 1);
@@ -94,7 +116,10 @@ namespace CISS311GroupProject
                 {
                     comd.Parameters.AddWithValue("@isAvailable", 0);
                 }
+                //executes the command for the sql statement
                 comd.ExecuteScalar();
+                // resets the form to unenable delete/update buttons
+                // and makes textboxes un typable and focus on courseId
                 ResetForm();
             }
         }
