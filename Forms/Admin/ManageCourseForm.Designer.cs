@@ -31,10 +31,12 @@ namespace CISS311GroupProject
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageCourseForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.noRadioButton = new System.Windows.Forms.RadioButton();
+            this.yesRadioButton = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
-            this.updatedSeatsTextBox = new System.Windows.Forms.TextBox();
+            this.updatedmaxSeatingTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.seatsAvailableLabel = new System.Windows.Forms.Label();
+            this.maxSeatingLabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.newCourseTitleTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,8 +48,6 @@ namespace CISS311GroupProject
             this.updateButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
-            this.yesRadioButton = new System.Windows.Forms.RadioButton();
-            this.noRadioButton = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,9 +56,9 @@ namespace CISS311GroupProject
             this.groupBox1.Controls.Add(this.noRadioButton);
             this.groupBox1.Controls.Add(this.yesRadioButton);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.updatedSeatsTextBox);
+            this.groupBox1.Controls.Add(this.updatedmaxSeatingTextBox);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.seatsAvailableLabel);
+            this.groupBox1.Controls.Add(this.maxSeatingLabel);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.newCourseTitleTextBox);
             this.groupBox1.Controls.Add(this.label3);
@@ -75,6 +75,28 @@ namespace CISS311GroupProject
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Update Course Information";
             // 
+            // noRadioButton
+            // 
+            this.noRadioButton.AutoSize = true;
+            this.noRadioButton.Location = new System.Drawing.Point(303, 257);
+            this.noRadioButton.Name = "noRadioButton";
+            this.noRadioButton.Size = new System.Drawing.Size(50, 24);
+            this.noRadioButton.TabIndex = 13;
+            this.noRadioButton.TabStop = true;
+            this.noRadioButton.Text = "NO";
+            this.noRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // yesRadioButton
+            // 
+            this.yesRadioButton.AutoSize = true;
+            this.yesRadioButton.Location = new System.Drawing.Point(175, 257);
+            this.yesRadioButton.Name = "yesRadioButton";
+            this.yesRadioButton.Size = new System.Drawing.Size(60, 24);
+            this.yesRadioButton.TabIndex = 12;
+            this.yesRadioButton.TabStop = true;
+            this.yesRadioButton.Text = "YES";
+            this.yesRadioButton.UseVisualStyleBackColor = true;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -84,44 +106,44 @@ namespace CISS311GroupProject
             this.label6.TabIndex = 11;
             this.label6.Text = "Course Available:";
             // 
-            // updatedSeatsTextBox
+            // updatedmaxSeatingTextBox
             // 
-            this.updatedSeatsTextBox.Location = new System.Drawing.Point(343, 206);
-            this.updatedSeatsTextBox.Name = "updatedSeatsTextBox";
-            this.updatedSeatsTextBox.Size = new System.Drawing.Size(35, 26);
-            this.updatedSeatsTextBox.TabIndex = 10;
+            this.updatedmaxSeatingTextBox.Location = new System.Drawing.Point(356, 206);
+            this.updatedmaxSeatingTextBox.Name = "updatedmaxSeatingTextBox";
+            this.updatedmaxSeatingTextBox.Size = new System.Drawing.Size(35, 26);
+            this.updatedmaxSeatingTextBox.TabIndex = 10;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(216, 207);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(121, 20);
+            this.label5.Size = new System.Drawing.Size(134, 20);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Updated Seats:";
+            this.label5.Text = "Updated Seating:";
             // 
-            // seatsAvailableLabel
+            // maxSeatingLabel
             // 
-            this.seatsAvailableLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.seatsAvailableLabel.Location = new System.Drawing.Point(175, 206);
-            this.seatsAvailableLabel.Name = "seatsAvailableLabel";
-            this.seatsAvailableLabel.Size = new System.Drawing.Size(35, 26);
-            this.seatsAvailableLabel.TabIndex = 8;
+            this.maxSeatingLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.maxSeatingLabel.Location = new System.Drawing.Point(175, 206);
+            this.maxSeatingLabel.Name = "maxSeatingLabel";
+            this.maxSeatingLabel.Size = new System.Drawing.Size(35, 26);
+            this.maxSeatingLabel.TabIndex = 8;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(15, 212);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 20);
+            this.label4.Size = new System.Drawing.Size(133, 20);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Seats Available:";
+            this.label4.Text = "Seating Capacity:";
             // 
             // newCourseTitleTextBox
             // 
             this.newCourseTitleTextBox.Location = new System.Drawing.Point(175, 153);
             this.newCourseTitleTextBox.Name = "newCourseTitleTextBox";
-            this.newCourseTitleTextBox.Size = new System.Drawing.Size(203, 26);
+            this.newCourseTitleTextBox.Size = new System.Drawing.Size(216, 26);
             this.newCourseTitleTextBox.TabIndex = 6;
             // 
             // label3
@@ -136,9 +158,9 @@ namespace CISS311GroupProject
             // currentCourseLabel
             // 
             this.currentCourseLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.currentCourseLabel.Location = new System.Drawing.Point(175, 101);
+            this.currentCourseLabel.Location = new System.Drawing.Point(175, 96);
             this.currentCourseLabel.Name = "currentCourseLabel";
-            this.currentCourseLabel.Size = new System.Drawing.Size(203, 26);
+            this.currentCourseLabel.Size = new System.Drawing.Size(216, 26);
             this.currentCourseLabel.TabIndex = 4;
             // 
             // label2
@@ -152,7 +174,7 @@ namespace CISS311GroupProject
             // 
             // findButton
             // 
-            this.findButton.Location = new System.Drawing.Point(303, 41);
+            this.findButton.Location = new System.Drawing.Point(316, 41);
             this.findButton.Name = "findButton";
             this.findButton.Size = new System.Drawing.Size(75, 30);
             this.findButton.TabIndex = 2;
@@ -162,7 +184,7 @@ namespace CISS311GroupProject
             // 
             // courseIdTextBox
             // 
-            this.courseIdTextBox.Location = new System.Drawing.Point(136, 43);
+            this.courseIdTextBox.Location = new System.Drawing.Point(135, 43);
             this.courseIdTextBox.Name = "courseIdTextBox";
             this.courseIdTextBox.Size = new System.Drawing.Size(100, 26);
             this.courseIdTextBox.TabIndex = 1;
@@ -209,28 +231,6 @@ namespace CISS311GroupProject
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
-            // yesRadioButton
-            // 
-            this.yesRadioButton.AutoSize = true;
-            this.yesRadioButton.Location = new System.Drawing.Point(175, 257);
-            this.yesRadioButton.Name = "yesRadioButton";
-            this.yesRadioButton.Size = new System.Drawing.Size(60, 24);
-            this.yesRadioButton.TabIndex = 12;
-            this.yesRadioButton.TabStop = true;
-            this.yesRadioButton.Text = "YES";
-            this.yesRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // noRadioButton
-            // 
-            this.noRadioButton.AutoSize = true;
-            this.noRadioButton.Location = new System.Drawing.Point(303, 257);
-            this.noRadioButton.Name = "noRadioButton";
-            this.noRadioButton.Size = new System.Drawing.Size(50, 24);
-            this.noRadioButton.TabIndex = 13;
-            this.noRadioButton.TabStop = true;
-            this.noRadioButton.Text = "NO";
-            this.noRadioButton.UseVisualStyleBackColor = true;
-            // 
             // ManageCourseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,9 +257,9 @@ namespace CISS311GroupProject
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox updatedSeatsTextBox;
+        private System.Windows.Forms.TextBox updatedmaxSeatingTextBox;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label seatsAvailableLabel;
+        private System.Windows.Forms.Label maxSeatingLabel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox newCourseTitleTextBox;
         private System.Windows.Forms.Label label3;

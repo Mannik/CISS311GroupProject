@@ -54,7 +54,7 @@ namespace CISS311GroupProject
                     DataRow dr = courseTable.Rows[0];
                     courseId = int.Parse(dr["courseId"].ToString());
                     currentCourseLabel.Text = dr["title"].ToString();
-                    seatsAvailableLabel.Text = dr["seats"].ToString();
+                    maxSeatingLabel.Text = dr["maxSeats"].ToString();
                     if (yesRadioButton.Checked)
                     {
                        
@@ -64,7 +64,7 @@ namespace CISS311GroupProject
                         noRadioButton.Checked = true;
                     }
                     // enables textboxes and buttons once it finds a course by Id
-                    updatedSeatsTextBox.Enabled = true;
+                    updatedmaxSeatingTextBox.Enabled = true;
                     newCourseTitleTextBox.Enabled = true;
                     deleteButton.Enabled = true;
                     updateButton.Enabled = true;
@@ -77,7 +77,7 @@ namespace CISS311GroupProject
             // Connection for update statement
             using (conn = new SqlConnection(connectionString))
             using (SqlCommand comd = new SqlCommand(
-                "UPDATE course SET title = @title, seats = @seats, isAvailable = @isAvailable " +
+                "UPDATE course SET title = @title, maxSeats = @maxSeats, isAvailable = @isAvailable " +
                 "WHERE courseId = @courseId", conn))
             {
                 // opens connection
@@ -85,7 +85,7 @@ namespace CISS311GroupProject
                 // parameters to pass for update 
                 comd.Parameters.AddWithValue("@courseId", courseId);
                 comd.Parameters.AddWithValue("@title", newCourseTitleTextBox.Text);
-                comd.Parameters.AddWithValue("@seats", updatedSeatsTextBox.Text);
+                comd.Parameters.AddWithValue("@maxSeats", updatedmaxSeatingTextBox.Text);
                 if (yesRadioButton.Checked)
                 {
                     comd.Parameters.AddWithValue("@isAvailable", 1);
@@ -124,8 +124,8 @@ namespace CISS311GroupProject
             courseIdTextBox.Clear();
             currentCourseLabel.Text = string.Empty;
             newCourseTitleTextBox.Clear();
-            seatsAvailableLabel.Text = string.Empty;
-            updatedSeatsTextBox.Clear();
+            maxSeatingLabel.Text = string.Empty;
+            updatedmaxSeatingTextBox.Clear();
             yesRadioButton.Checked = false;
             noRadioButton.Checked = false;
             courseIdTextBox.Focus();
