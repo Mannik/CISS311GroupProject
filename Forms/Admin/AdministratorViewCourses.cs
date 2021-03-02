@@ -43,20 +43,27 @@ namespace CISS311GroupProject
             //Query to get Instructor's first and last and the seat count for the selected course
             //I think the below SQL statement should be right, but I'm currently having a few problems with the database not showing up, 
             //so I'm not sure if it's actually correct since I can't test
-            using (SqlCommand comd = new SqlCommand("SELECT Employee.FirstName, Employee.LastName, Course.Seats FROM Employee JOIN Course ON Employee.EmployeeID = Course.Instructor WHERE Course.CourseID = @CourseID", conn))
+            using (SqlCommand comd = new SqlCommand("SELECT Employee.FirstName + ' ' + Employee.LastName AS Name, Course.maxSeats AS maxSeats FROM Employee JOIN Course ON Employee.EmployeeID = Course.Instructor WHERE Course.CourseID = @CourseID", conn))
             //found something similar to this on Stack Overflow to set textbox text based on database values
             //https://stackoverflow.com/questions/4298631/how-to-fill-textbox-from-dataset
-            using (SqlDataReader reader = comd.ExecuteReader(CommandBehavior.CloseConnection))
+            using (SqlDataAdapter adapter = new SqlDataAdapter(comd)) 
             {
                 //Sets parameters for the query above
                 comd.Parameters.AddWithValue("@CourseID", courseListBox.SelectedValue);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                DataRow dr = dt.Rows[0];
+
+                //NOT USING ANYMORE
                 //I had to look up what the ? operator does. It essentially serves as an if/else, followed by the value/action if true : value/action if false
                 //So what the below line is doing is having the datareader read the results, and if it reads successfully, set the textbox value to "FirstName LastName" or
                 //else return an empty string. More Info: http://www.vcskicks.com/question-mark-operator.php#:~:text=Question-Mark%20Operator.%20A%20C%23%20operator%20is%20symbols%20used,%28Here%20is%20a%20complete%20list%20of%20C%23%20operators%29.
-                instructorTextBox.Text = reader.Read() ? reader["Employee.FirstName"].ToString() + " " + reader["Employee.LastName"].ToString() : string.Empty;
-                //same explanation as the line above, except returning seats or an empty string
-                seatTextBox.Text = reader.Read() ? reader["Course.Seats"].ToString() : string.Empty;
-                reader.Close();
+                //instructorTextBox.Text = reader.Read() ? reader["Employee.FirstName"].ToString() + " " + reader["Employee.LastName"].ToString() : string.Empty;
+
+                //instead of using the reader commented out above, made better sql query that combines first and last as name, fills table, and pulls value from table
+                instructorTextBox.Text = dr["Name"].ToString();
+
+                seatTextBox.Text = dr["maxSeats"].ToString();
             }
         }
 

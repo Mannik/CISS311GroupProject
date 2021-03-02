@@ -29,6 +29,7 @@ namespace CISS311GroupProject
 
         private void AddCourseForm_Load(object sender, EventArgs e)
         {
+            //Fill instructor combo box with all instructors from the employee table
             using (conn = new SqlConnection(connectionString))
             using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT firstName + ' ' + lastName AS Name, employeeID FROM employee", conn))
             {
@@ -42,6 +43,8 @@ namespace CISS311GroupProject
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            //if the new course text box isn't empty, check if the seats textbox has a valid number. If the number is valid, query the course table to see if a course
+            //with the same name as in the new course textbox already exists. If not, write the new course to the table
             if (!(String.IsNullOrWhiteSpace(courseTextBox.Text)))
             {
                 int result;
@@ -56,10 +59,10 @@ namespace CISS311GroupProject
                         adapter.Fill(existingCourse);
                         if(existingCourse.Rows.Count < 1)
                         {
-                            using (SqlCommand comd = new SqlCommand("INSERT INTO course (title, seats, employeeId, isAvailable) VALUES (@Title, @Seats, @InstructorID, 0)", conn))
+                            using (SqlCommand comd = new SqlCommand("INSERT INTO course (title, maxSeats, employeeId, isAvailable) VALUES (@Title, @maxSeats, @InstructorID, 0)", conn))
                             {
                                 comd.Parameters.AddWithValue("@Title", courseTextBox.Text);
-                                comd.Parameters.AddWithValue("@Seats", result);
+                                comd.Parameters.AddWithValue("@maxSeats", result);
                                 comd.Parameters.AddWithValue("@InstructorID", instructorComboBox.SelectedValue);
                                 conn.Open();
                                 comd.ExecuteScalar();

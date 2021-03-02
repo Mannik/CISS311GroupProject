@@ -56,39 +56,30 @@ namespace CISS311GroupProject.Forms.Instructor
         {
             //when a course in the course listbox is selected, update the selected course info to the proper course
             using (conn = new SqlConnection(connectionString))
-            using (SqlCommand comd = new SqlCommand("SELECT courseXstudent.courseId AS courseId, course.title AS courseTitle, course.seats AS totalSeats, " +
-                "course.isAvailable AS Availability, courseXstudent.studentId AS student FROM courseXstudent JOIN course ON courseXstudent.courseId = course.courseId " +
-                "WHERE courseXstudent.courseId = @courseId", conn))
+            using (SqlCommand comd = new SqlCommand("SELECT courseId, title, maxSeats, seats AS filledSeats, isAvailable AS Availability FROM course " +
+                "WHERE courseId = @courseId", conn))
             using (SqlDataAdapter adapter = new SqlDataAdapter(comd))
             {
                 comd.Parameters.AddWithValue("@courseId", courseListBox.SelectedValue.ToString());
                 DataTable selectedCourseTable = new DataTable();
-                if(selectedCourseTable.Rows.Count > 0)
+                adapter.Fill(selectedCourseTable);
+                DataRow dr = selectedCourseTable.Rows[0];
+                courseNameLabel.Text = dr["title"].ToString();
+                courseIdLabel.Text = dr["courseId"].ToString();
+                if (dr["Availability"].ToString() == "0")
                 {
-                    DataRow dr = selectedCourseTable.Rows[0];
-                    adapter.Fill(selectedCourseTable);
-                    courseNameLabel.Text = dr["courseTitle"].ToString();
-                    courseIdLabel.Text = dr["courseId"].ToString();
-                    if (dr["Availability"].ToString() == "0")
-                    {
-                        enrollmentStatusLabel.Text = "Class enrollment is open.";
-                    }
-                    else
-                    {
-                        enrollmentStatusLabel.Text = "Class enrollment is closed.";
-                    }
-                    string totalSeatsString = dr["totalSeats"].ToString();
-                    int totalSeats = int.Parse(totalSeatsString);
-                    int studentCount = selectedCourseTable.Rows.Count;
-                    totalSeatCountLabel.Text = totalSeatsString;
-                    studentCountLabel.Text = studentCount.ToString();
-                    openSeatCountLabel.Text = (totalSeats - studentCount).ToString();
+                    enrollmentStatusLabel.Text = "Class enrollment is open.";
                 }
                 else
                 {
-                    courseNameLabel.Text = "No enrollment information found.";
+                    enrollmentStatusLabel.Text = "Class enrollment is closed.";
                 }
-                
+                string totalSeatsString = dr["maxSeats"].ToString();
+                int totalSeats = int.Parse(totalSeatsString);
+                int studentCount = int.Parse(dr["filledSeats"].ToString());
+                totalSeatCountLabel.Text = totalSeatsString;
+                studentCountLabel.Text = studentCount.ToString();
+                openSeatCountLabel.Text = (totalSeats - studentCount).ToString();
             }
         }
 
