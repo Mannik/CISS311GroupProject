@@ -48,11 +48,21 @@ namespace CISS311GroupProject
             this.updateButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.employeeIdLabel = new System.Windows.Forms.Label();
+            this.InstructorNameLabel = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.newInstructorComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.newInstructorComboBox);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.InstructorNameLabel);
+            this.groupBox1.Controls.Add(this.employeeIdLabel);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.noRadioButton);
             this.groupBox1.Controls.Add(this.yesRadioButton);
             this.groupBox1.Controls.Add(this.label6);
@@ -70,7 +80,7 @@ namespace CISS311GroupProject
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(456, 303);
+            this.groupBox1.Size = new System.Drawing.Size(456, 408);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Update Course Information";
@@ -108,6 +118,7 @@ namespace CISS311GroupProject
             // 
             // updatedmaxSeatingTextBox
             // 
+            this.updatedmaxSeatingTextBox.Enabled = false;
             this.updatedmaxSeatingTextBox.Location = new System.Drawing.Point(356, 206);
             this.updatedmaxSeatingTextBox.Name = "updatedmaxSeatingTextBox";
             this.updatedmaxSeatingTextBox.Size = new System.Drawing.Size(35, 26);
@@ -141,6 +152,7 @@ namespace CISS311GroupProject
             // 
             // newCourseTitleTextBox
             // 
+            this.newCourseTitleTextBox.Enabled = false;
             this.newCourseTitleTextBox.Location = new System.Drawing.Point(175, 153);
             this.newCourseTitleTextBox.Name = "newCourseTitleTextBox";
             this.newCourseTitleTextBox.Size = new System.Drawing.Size(216, 26);
@@ -201,7 +213,7 @@ namespace CISS311GroupProject
             // updateButton
             // 
             this.updateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.updateButton.Location = new System.Drawing.Point(13, 322);
+            this.updateButton.Location = new System.Drawing.Point(12, 427);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(125, 30);
             this.updateButton.TabIndex = 1;
@@ -212,7 +224,7 @@ namespace CISS311GroupProject
             // deleteButton
             // 
             this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.deleteButton.Location = new System.Drawing.Point(173, 322);
+            this.deleteButton.Location = new System.Drawing.Point(175, 427);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(125, 30);
             this.deleteButton.TabIndex = 2;
@@ -223,7 +235,7 @@ namespace CISS311GroupProject
             // exitButton
             // 
             this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.exitButton.Location = new System.Drawing.Point(344, 322);
+            this.exitButton.Location = new System.Drawing.Point(341, 427);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(125, 30);
             this.exitButton.TabIndex = 3;
@@ -231,11 +243,54 @@ namespace CISS311GroupProject
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(11, 310);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(138, 20);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Current Instructor:";
+            // 
+            // employeeIdLabel
+            // 
+            this.employeeIdLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.employeeIdLabel.Location = new System.Drawing.Point(171, 310);
+            this.employeeIdLabel.Name = "employeeIdLabel";
+            this.employeeIdLabel.Size = new System.Drawing.Size(54, 26);
+            this.employeeIdLabel.TabIndex = 15;
+            // 
+            // InstructorNameLabel
+            // 
+            this.InstructorNameLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.InstructorNameLabel.Location = new System.Drawing.Point(231, 309);
+            this.InstructorNameLabel.Name = "InstructorNameLabel";
+            this.InstructorNameLabel.Size = new System.Drawing.Size(160, 26);
+            this.InstructorNameLabel.TabIndex = 16;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(15, 362);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(138, 20);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Update Instructor:";
+            // 
+            // newInstructorComboBox
+            // 
+            this.newInstructorComboBox.Enabled = false;
+            this.newInstructorComboBox.FormattingEnabled = true;
+            this.newInstructorComboBox.Location = new System.Drawing.Point(171, 360);
+            this.newInstructorComboBox.Name = "newInstructorComboBox";
+            this.newInstructorComboBox.Size = new System.Drawing.Size(220, 28);
+            this.newInstructorComboBox.TabIndex = 18;
+            // 
             // ManageCourseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(478, 369);
+            this.ClientSize = new System.Drawing.Size(478, 469);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.updateButton);
@@ -270,5 +325,10 @@ namespace CISS311GroupProject
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton noRadioButton;
         private System.Windows.Forms.RadioButton yesRadioButton;
+        private System.Windows.Forms.ComboBox newInstructorComboBox;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label InstructorNameLabel;
+        private System.Windows.Forms.Label employeeIdLabel;
+        private System.Windows.Forms.Label label7;
     }
 }
