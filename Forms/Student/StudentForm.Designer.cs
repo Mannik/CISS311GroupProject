@@ -32,13 +32,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.studentIdTextBox = new System.Windows.Forms.TextBox();
             this.findButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.firstNameLabel = new System.Windows.Forms.Label();
+            this.lastNameLabel = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.studentTotalCreditsLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // enrollButton
             // 
-            this.enrollButton.Location = new System.Drawing.Point(43, 367);
+            this.enrollButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enrollButton.Location = new System.Drawing.Point(43, 327);
             this.enrollButton.Name = "enrollButton";
-            this.enrollButton.Size = new System.Drawing.Size(248, 53);
+            this.enrollButton.Size = new System.Drawing.Size(726, 93);
             this.enrollButton.TabIndex = 0;
             this.enrollButton.Text = "Enroll";
             this.enrollButton.UseVisualStyleBackColor = true;
@@ -70,11 +78,82 @@
             this.findButton.UseVisualStyleBackColor = true;
             this.findButton.Click += new System.EventHandler(this.findButton_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(357, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "First Name:";
+            // 
+            // firstNameLabel
+            // 
+            this.firstNameLabel.AutoSize = true;
+            this.firstNameLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.firstNameLabel.Location = new System.Drawing.Point(436, 23);
+            this.firstNameLabel.Name = "firstNameLabel";
+            this.firstNameLabel.Size = new System.Drawing.Size(2, 15);
+            this.firstNameLabel.TabIndex = 5;
+            // 
+            // lastNameLabel
+            // 
+            this.lastNameLabel.AutoSize = true;
+            this.lastNameLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lastNameLabel.Location = new System.Drawing.Point(603, 23);
+            this.lastNameLabel.Name = "lastNameLabel";
+            this.lastNameLabel.Size = new System.Drawing.Size(2, 15);
+            this.lastNameLabel.TabIndex = 7;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(524, 23);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 13);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Last Name:";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(43, 226);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(726, 82);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "View Courses";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 60);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Total Credits:";
+            // 
+            // studentTotalCreditsLabel
+            // 
+            this.studentTotalCreditsLabel.AutoSize = true;
+            this.studentTotalCreditsLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.studentTotalCreditsLabel.Location = new System.Drawing.Point(93, 60);
+            this.studentTotalCreditsLabel.Name = "studentTotalCreditsLabel";
+            this.studentTotalCreditsLabel.Size = new System.Drawing.Size(2, 15);
+            this.studentTotalCreditsLabel.TabIndex = 10;
+            // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.studentTotalCreditsLabel);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lastNameLabel);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.firstNameLabel);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.findButton);
             this.Controls.Add(this.studentIdTextBox);
             this.Controls.Add(this.label1);
@@ -92,5 +171,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox studentIdTextBox;
         private System.Windows.Forms.Button findButton;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label firstNameLabel;
+        private System.Windows.Forms.Label lastNameLabel;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label studentTotalCreditsLabel;
     }
 }
