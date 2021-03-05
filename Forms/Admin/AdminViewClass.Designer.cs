@@ -30,6 +30,7 @@ namespace CISS311GroupProject.Forms.Admin
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminViewClass));
             this.gradesDataGrid = new System.Windows.Forms.DataGridView();
             this.tinyCollegeDataSet = new CISS311GroupProject.TinyCollegeDataSet();
             this.tinyCollegeDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -40,10 +41,12 @@ namespace CISS311GroupProject.Forms.Admin
             this.searchBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.titleLabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.gradesDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tinyCollegeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tinyCollegeDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseXstudentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gradesDataGrid
@@ -51,12 +54,12 @@ namespace CISS311GroupProject.Forms.Admin
             this.gradesDataGrid.AllowUserToAddRows = false;
             this.gradesDataGrid.AllowUserToDeleteRows = false;
             this.gradesDataGrid.AllowUserToOrderColumns = true;
-            this.gradesDataGrid.Location = new System.Drawing.Point(49, 33);
+            this.gradesDataGrid.Location = new System.Drawing.Point(12, 33);
             this.gradesDataGrid.MultiSelect = false;
             this.gradesDataGrid.Name = "gradesDataGrid";
             this.gradesDataGrid.ReadOnly = true;
             this.gradesDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gradesDataGrid.Size = new System.Drawing.Size(250, 413);
+            this.gradesDataGrid.Size = new System.Drawing.Size(341, 367);
             this.gradesDataGrid.TabIndex = 0;
             // 
             // tinyCollegeDataSet
@@ -97,9 +100,10 @@ namespace CISS311GroupProject.Forms.Admin
             // 
             // searchBtn
             // 
-            this.searchBtn.Location = new System.Drawing.Point(133, 452);
+            this.searchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.searchBtn.Location = new System.Drawing.Point(73, 406);
             this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(97, 23);
+            this.searchBtn.Size = new System.Drawing.Size(150, 30);
             this.searchBtn.TabIndex = 3;
             this.searchBtn.Text = "Search Courses";
             this.searchBtn.UseVisualStyleBackColor = true;
@@ -122,24 +126,39 @@ namespace CISS311GroupProject.Forms.Admin
             this.titleLabel.Size = new System.Drawing.Size(0, 13);
             this.titleLabel.TabIndex = 5;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = global::CISS311GroupProject.Properties.Resources.TinyCollegeShadow;
+            this.pictureBox1.InitialImage = global::CISS311GroupProject.Properties.Resources.TinyCollegeShadow;
+            this.pictureBox1.Location = new System.Drawing.Point(268, 404);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(85, 69);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
             // AdminViewClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 485);
+            this.ClientSize = new System.Drawing.Size(365, 485);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.searchBtn);
             this.Controls.Add(this.instructorLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gradesDataGrid);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminViewClass";
-            this.Text = "AdminViewClass";
+            this.Text = "Administrator: View Classes";
             this.Load += new System.EventHandler(this.AdminViewClass_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gradesDataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tinyCollegeDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tinyCollegeDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseXstudentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,5 +176,6 @@ namespace CISS311GroupProject.Forms.Admin
         private System.Windows.Forms.Button searchBtn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label titleLabel;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

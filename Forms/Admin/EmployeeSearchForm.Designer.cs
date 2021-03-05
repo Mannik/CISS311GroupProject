@@ -29,6 +29,7 @@ namespace CISS311GroupProject.Forms.Admin
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeSearchForm));
             this.selectBtn = new System.Windows.Forms.Button();
             this.employeeDataGrid = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.employeeDataGrid)).BeginInit();
@@ -36,9 +37,10 @@ namespace CISS311GroupProject.Forms.Admin
             // 
             // selectBtn
             // 
-            this.selectBtn.Location = new System.Drawing.Point(340, 551);
+            this.selectBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.selectBtn.Location = new System.Drawing.Point(296, 551);
             this.selectBtn.Name = "selectBtn";
-            this.selectBtn.Size = new System.Drawing.Size(85, 23);
+            this.selectBtn.Size = new System.Drawing.Size(129, 28);
             this.selectBtn.TabIndex = 23;
             this.selectBtn.Text = "Use Selection";
             this.selectBtn.UseVisualStyleBackColor = true;
@@ -65,8 +67,9 @@ namespace CISS311GroupProject.Forms.Admin
             this.ClientSize = new System.Drawing.Size(437, 586);
             this.Controls.Add(this.employeeDataGrid);
             this.Controls.Add(this.selectBtn);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EmployeeSearchForm";
-            this.Text = "EmployeeSearchForm";
+            this.Text = "Employee Search";
             this.Load += new System.EventHandler(this.EmployeeSearchForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.employeeDataGrid)).EndInit();
             this.ResumeLayout(false);
