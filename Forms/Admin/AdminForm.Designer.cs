@@ -129,7 +129,7 @@
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.addStudentBtn);
             this.Name = "AdminForm";
-            this.Text = "AdminForm";
+            this.Text = "Administrator:";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

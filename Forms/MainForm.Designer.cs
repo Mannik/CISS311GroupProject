@@ -41,7 +41,7 @@ namespace CISS311GroupProject
             // adminBtn
             // 
             this.adminBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminBtn.Location = new System.Drawing.Point(188, 63);
+            this.adminBtn.Location = new System.Drawing.Point(12, 12);
             this.adminBtn.Name = "adminBtn";
             this.adminBtn.Size = new System.Drawing.Size(361, 58);
             this.adminBtn.TabIndex = 0;
@@ -52,7 +52,7 @@ namespace CISS311GroupProject
             // instructorBtn
             // 
             this.instructorBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.instructorBtn.Location = new System.Drawing.Point(188, 165);
+            this.instructorBtn.Location = new System.Drawing.Point(12, 92);
             this.instructorBtn.Name = "instructorBtn";
             this.instructorBtn.Size = new System.Drawing.Size(361, 58);
             this.instructorBtn.TabIndex = 1;
@@ -63,7 +63,7 @@ namespace CISS311GroupProject
             // studentBtn
             // 
             this.studentBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.studentBtn.Location = new System.Drawing.Point(188, 267);
+            this.studentBtn.Location = new System.Drawing.Point(12, 172);
             this.studentBtn.Name = "studentBtn";
             this.studentBtn.Size = new System.Drawing.Size(361, 58);
             this.studentBtn.TabIndex = 2;
@@ -76,7 +76,7 @@ namespace CISS311GroupProject
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Image = global::CISS311GroupProject.Properties.Resources.TinyCollegeShadow;
             this.pictureBox1.InitialImage = global::CISS311GroupProject.Properties.Resources.TinyCollegeShadow;
-            this.pictureBox1.Location = new System.Drawing.Point(614, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(379, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(174, 138);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -86,9 +86,9 @@ namespace CISS311GroupProject
             // closeBtn
             // 
             this.closeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeBtn.Location = new System.Drawing.Point(601, 380);
+            this.closeBtn.Location = new System.Drawing.Point(379, 172);
             this.closeBtn.Name = "closeBtn";
-            this.closeBtn.Size = new System.Drawing.Size(187, 58);
+            this.closeBtn.Size = new System.Drawing.Size(174, 58);
             this.closeBtn.TabIndex = 4;
             this.closeBtn.Text = "&Close";
             this.closeBtn.UseVisualStyleBackColor = true;
@@ -98,7 +98,7 @@ namespace CISS311GroupProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(564, 244);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.studentBtn);
