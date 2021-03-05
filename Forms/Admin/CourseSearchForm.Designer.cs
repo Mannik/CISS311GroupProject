@@ -29,6 +29,7 @@ namespace CISS311GroupProject.Forms.Admin
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CourseSearchForm));
             this.courseDataGrid = new System.Windows.Forms.DataGridView();
             this.selectBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.courseDataGrid)).BeginInit();
@@ -50,9 +51,10 @@ namespace CISS311GroupProject.Forms.Admin
             // 
             // selectBtn
             // 
-            this.selectBtn.Location = new System.Drawing.Point(275, 551);
+            this.selectBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.selectBtn.Location = new System.Drawing.Point(231, 551);
             this.selectBtn.Name = "selectBtn";
-            this.selectBtn.Size = new System.Drawing.Size(85, 23);
+            this.selectBtn.Size = new System.Drawing.Size(129, 28);
             this.selectBtn.TabIndex = 25;
             this.selectBtn.Text = "Use Selection";
             this.selectBtn.UseVisualStyleBackColor = true;
@@ -65,6 +67,7 @@ namespace CISS311GroupProject.Forms.Admin
             this.ClientSize = new System.Drawing.Size(373, 586);
             this.Controls.Add(this.courseDataGrid);
             this.Controls.Add(this.selectBtn);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CourseSearchForm";
             this.Text = "Course Search";
             this.Load += new System.EventHandler(this.CourseSearchForm_Load);

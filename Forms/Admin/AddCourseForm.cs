@@ -59,7 +59,7 @@ namespace CISS311GroupProject
                         adapter.Fill(existingCourse);
                         if(existingCourse.Rows.Count < 1)
                         {
-                            using (SqlCommand comd = new SqlCommand("INSERT INTO course (title, maxSeats, employeeId, isAvailable) VALUES (@Title, @maxSeats, @InstructorID, 0)", conn))
+                            using (SqlCommand comd = new SqlCommand("INSERT INTO course (title, maxSeats, employeeId, isAvailable, seats) VALUES (@Title, @maxSeats, @InstructorID, 0, 0)", conn))
                             {
                                 comd.Parameters.AddWithValue("@Title", courseTextBox.Text);
                                 comd.Parameters.AddWithValue("@maxSeats", result);

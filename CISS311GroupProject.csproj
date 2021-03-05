@@ -76,12 +76,6 @@
     <Compile Include="Classes\Course.cs" />
     <Compile Include="Classes\Employee.cs" />
     <Compile Include="Classes\Student.cs" />
-    <Compile Include="Forms\Admin\AdministratorViewCourses.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Admin\AdministratorViewCourses.Designer.cs">
-      <DependentUpon>AdministratorViewCourses.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Admin\AdminViewClass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +137,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TinyCollegeDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="TinyCollegeDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TinyCollegeDataSet1.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\Admin\AddCourseForm.resx">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,9 +153,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\AdministratorViewCourses.resx">
-      <DependentUpon>AdministratorViewCourses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\AdminViewClass.resx">
       <DependentUpon>AdminViewClass.cs</DependentUpon>
@@ -215,6 +211,17 @@
     </None>
     <None Include="TinyCollegeDataSet.xss">
       <DependentUpon>TinyCollegeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TinyCollegeDataSet1.xsc">
+      <DependentUpon>TinyCollegeDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TinyCollegeDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TinyCollegeDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TinyCollegeDataSet1.xss">
+      <DependentUpon>TinyCollegeDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
