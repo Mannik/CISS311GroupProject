@@ -29,6 +29,7 @@ namespace CISS311GroupProject.Forms.Admin
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminAddInstructor));
             this.saveBtn = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,9 +47,10 @@ namespace CISS311GroupProject.Forms.Admin
             // 
             // saveBtn
             // 
+            this.saveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.saveBtn.Location = new System.Drawing.Point(81, 141);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(75, 23);
+            this.saveBtn.Size = new System.Drawing.Size(75, 27);
             this.saveBtn.TabIndex = 0;
             this.saveBtn.Text = "&Save";
             this.saveBtn.UseVisualStyleBackColor = true;
@@ -56,9 +58,10 @@ namespace CISS311GroupProject.Forms.Admin
             // 
             // closeBtn
             // 
+            this.closeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.closeBtn.Location = new System.Drawing.Point(191, 141);
             this.closeBtn.Name = "closeBtn";
-            this.closeBtn.Size = new System.Drawing.Size(75, 23);
+            this.closeBtn.Size = new System.Drawing.Size(75, 27);
             this.closeBtn.TabIndex = 1;
             this.closeBtn.Text = "Cl&ose";
             this.closeBtn.UseVisualStyleBackColor = true;
@@ -115,9 +118,10 @@ namespace CISS311GroupProject.Forms.Admin
             // 
             // searchBtn
             // 
+            this.searchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.searchBtn.Location = new System.Drawing.Point(292, 14);
             this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(75, 23);
+            this.searchBtn.Size = new System.Drawing.Size(75, 28);
             this.searchBtn.TabIndex = 8;
             this.searchBtn.Text = "Search";
             this.searchBtn.UseVisualStyleBackColor = true;
@@ -147,9 +151,10 @@ namespace CISS311GroupProject.Forms.Admin
             // 
             // clearBtn
             // 
+            this.clearBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.clearBtn.Location = new System.Drawing.Point(292, 48);
             this.clearBtn.Name = "clearBtn";
-            this.clearBtn.Size = new System.Drawing.Size(75, 23);
+            this.clearBtn.Size = new System.Drawing.Size(75, 28);
             this.clearBtn.TabIndex = 11;
             this.clearBtn.Text = "Clear";
             this.clearBtn.UseVisualStyleBackColor = true;
@@ -172,8 +177,9 @@ namespace CISS311GroupProject.Forms.Admin
             this.Controls.Add(this.label1);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.saveBtn);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminAddInstructor";
-            this.Text = "Add New Employee";
+            this.Text = "Administrator: Add New Employee";
             this.Load += new System.EventHandler(this.AdminAddInstructor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
