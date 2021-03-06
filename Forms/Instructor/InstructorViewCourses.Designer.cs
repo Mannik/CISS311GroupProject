@@ -60,7 +60,7 @@ namespace CISS311GroupProject.Forms.Instructor
             this.label1.Location = new System.Drawing.Point(22, 20);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 13);
+            this.label1.Size = new System.Drawing.Size(114, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Select Instructor:";
             // 
@@ -68,9 +68,9 @@ namespace CISS311GroupProject.Forms.Instructor
             // 
             this.instructorComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.instructorComboBox.FormattingEnabled = true;
-            this.instructorComboBox.Location = new System.Drawing.Point(117, 17);
+            this.instructorComboBox.Location = new System.Drawing.Point(139, 17);
             this.instructorComboBox.Name = "instructorComboBox";
-            this.instructorComboBox.Size = new System.Drawing.Size(371, 21);
+            this.instructorComboBox.Size = new System.Drawing.Size(371, 25);
             this.instructorComboBox.TabIndex = 1;
             this.instructorComboBox.SelectedIndexChanged += new System.EventHandler(this.instructorComboBox_SelectedIndexChanged);
             // 
@@ -88,9 +88,10 @@ namespace CISS311GroupProject.Forms.Instructor
             // courseListBox
             // 
             this.courseListBox.FormattingEnabled = true;
+            this.courseListBox.ItemHeight = 17;
             this.courseListBox.Location = new System.Drawing.Point(0, 27);
             this.courseListBox.Name = "courseListBox";
-            this.courseListBox.Size = new System.Drawing.Size(513, 173);
+            this.courseListBox.Size = new System.Drawing.Size(513, 157);
             this.courseListBox.TabIndex = 0;
             this.courseListBox.SelectedIndexChanged += new System.EventHandler(this.courseListBox_SelectedIndexChanged);
             // 
@@ -121,7 +122,7 @@ namespace CISS311GroupProject.Forms.Instructor
             this.totalSeatCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalSeatCountLabel.Location = new System.Drawing.Point(309, 50);
             this.totalSeatCountLabel.Name = "totalSeatCountLabel";
-            this.totalSeatCountLabel.Size = new System.Drawing.Size(0, 13);
+            this.totalSeatCountLabel.Size = new System.Drawing.Size(0, 17);
             this.totalSeatCountLabel.TabIndex = 10;
             // 
             // label6
@@ -130,7 +131,7 @@ namespace CISS311GroupProject.Forms.Instructor
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(185, 50);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 13);
+            this.label6.Size = new System.Drawing.Size(118, 17);
             this.label6.TabIndex = 9;
             this.label6.Text = "Total Seat Count:";
             // 
@@ -140,7 +141,7 @@ namespace CISS311GroupProject.Forms.Instructor
             this.courseIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.courseIdLabel.Location = new System.Drawing.Point(87, 50);
             this.courseIdLabel.Name = "courseIdLabel";
-            this.courseIdLabel.Size = new System.Drawing.Size(0, 13);
+            this.courseIdLabel.Size = new System.Drawing.Size(0, 17);
             this.courseIdLabel.TabIndex = 8;
             // 
             // courseNameLabel
@@ -149,7 +150,7 @@ namespace CISS311GroupProject.Forms.Instructor
             this.courseNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.courseNameLabel.Location = new System.Drawing.Point(110, 23);
             this.courseNameLabel.Name = "courseNameLabel";
-            this.courseNameLabel.Size = new System.Drawing.Size(0, 13);
+            this.courseNameLabel.Size = new System.Drawing.Size(0, 17);
             this.courseNameLabel.TabIndex = 7;
             // 
             // openSeatCountLabel
@@ -158,7 +159,7 @@ namespace CISS311GroupProject.Forms.Instructor
             this.openSeatCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.openSeatCountLabel.Location = new System.Drawing.Point(133, 108);
             this.openSeatCountLabel.Name = "openSeatCountLabel";
-            this.openSeatCountLabel.Size = new System.Drawing.Size(0, 13);
+            this.openSeatCountLabel.Size = new System.Drawing.Size(0, 17);
             this.openSeatCountLabel.TabIndex = 6;
             // 
             // studentCountLabel
@@ -167,7 +168,7 @@ namespace CISS311GroupProject.Forms.Instructor
             this.studentCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentCountLabel.Location = new System.Drawing.Point(185, 80);
             this.studentCountLabel.Name = "studentCountLabel";
-            this.studentCountLabel.Size = new System.Drawing.Size(0, 13);
+            this.studentCountLabel.Size = new System.Drawing.Size(0, 17);
             this.studentCountLabel.TabIndex = 5;
             // 
             // label5
@@ -176,7 +177,7 @@ namespace CISS311GroupProject.Forms.Instructor
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(6, 108);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 13);
+            this.label5.Size = new System.Drawing.Size(121, 17);
             this.label5.TabIndex = 4;
             this.label5.Text = "Open Seat Count:";
             // 
@@ -186,7 +187,7 @@ namespace CISS311GroupProject.Forms.Instructor
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(6, 80);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(130, 13);
+            this.label4.Size = new System.Drawing.Size(173, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "Student Enrollment Count:";
             // 
@@ -196,7 +197,7 @@ namespace CISS311GroupProject.Forms.Instructor
             this.enrollmentStatusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enrollmentStatusLabel.Location = new System.Drawing.Point(6, 134);
             this.enrollmentStatusLabel.Name = "enrollmentStatusLabel";
-            this.enrollmentStatusLabel.Size = new System.Drawing.Size(0, 13);
+            this.enrollmentStatusLabel.Size = new System.Drawing.Size(0, 17);
             this.enrollmentStatusLabel.TabIndex = 2;
             // 
             // label3
@@ -205,7 +206,7 @@ namespace CISS311GroupProject.Forms.Instructor
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(6, 50);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 13);
+            this.label3.Size = new System.Drawing.Size(74, 17);
             this.label3.TabIndex = 1;
             this.label3.Text = "Course ID:";
             // 
@@ -215,7 +216,7 @@ namespace CISS311GroupProject.Forms.Instructor
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(6, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 13);
+            this.label2.Size = new System.Drawing.Size(98, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Course Name:";
             // 
@@ -244,7 +245,7 @@ namespace CISS311GroupProject.Forms.Instructor
             // 
             // InstructorViewCourses
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(549, 532);
             this.Controls.Add(this.pictureBox1);

@@ -32,6 +32,7 @@
             this.viewCoursesBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.closeBtn = new System.Windows.Forms.Button();
+            this.updateGradesButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,12 +68,25 @@
             this.closeBtn.TabIndex = 5;
             this.closeBtn.Text = "&Close";
             this.closeBtn.UseVisualStyleBackColor = true;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
+            // 
+            // updateGradesButton
+            // 
+            this.updateGradesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
+            this.updateGradesButton.Location = new System.Drawing.Point(12, 105);
+            this.updateGradesButton.Name = "updateGradesButton";
+            this.updateGradesButton.Size = new System.Drawing.Size(596, 72);
+            this.updateGradesButton.TabIndex = 7;
+            this.updateGradesButton.Text = "Update Grades";
+            this.updateGradesButton.UseVisualStyleBackColor = true;
+            this.updateGradesButton.Click += new System.EventHandler(this.updateGradesButton_Click);
             // 
             // InstructorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 402);
+            this.Controls.Add(this.updateGradesButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.viewCoursesBtn);
@@ -89,5 +103,6 @@
         private System.Windows.Forms.Button viewCoursesBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button closeBtn;
+        private System.Windows.Forms.Button updateGradesButton;
     }
 }
