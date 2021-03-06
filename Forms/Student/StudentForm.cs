@@ -28,14 +28,40 @@ namespace CISS311GroupProject
 
         private void enrollButton_Click(object sender, EventArgs e)
         {
-            StudentEnrollCourse studentEnrollCourse = new StudentEnrollCourse();
+            StudentEnrollCourse studentEnrollCourse = new StudentEnrollCourse(int.Parse(studentIdTextBox.Text));
             studentEnrollCourse.ShowDialog();
         }
 
         private void findButton_Click(object sender, EventArgs e)
         {
+            // finds and fills in student information off student Id search
+            fillStudentInfo();
+            checkCreditCount();
+
+        }
+
+        private void fillStudentInfo()
+        {
+            using (conn = new SqlConnection(connectionString))
+            using (SqlCommand comd = new SqlCommand(
+                "SELECT * from student where studentId = @studentId", conn))
+            using (SqlDataAdapter adapter = new SqlDataAdapter(comd))
+            {
+                comd.Parameters.AddWithValue("@studentId", studentIdTextBox.Text);
+
+                DataTable studentTable = new DataTable();
+                adapter.Fill(studentTable);
+                DataRow dr = studentTable.Rows[0];
+                firstNameLabel.Text = dr["firstName"].ToString();
+                lastNameLabel.Text = dr["lastName"].ToString();
+                studentTotalCreditsLabel.Text = dr["credits"].ToString();
+
+            }
+        }
+
+            private void checkCreditCount()
+        {
             // Find a student and check if they have enough credits to graduate.
-            // finds information off student Id search
             using (conn = new SqlConnection(connectionString))
             using (SqlCommand comd = new SqlCommand(
                 "SELECT credits from student where studentId = @studentId", conn))
@@ -56,6 +82,11 @@ namespace CISS311GroupProject
                 }
 
             }
+        }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
