@@ -22,5 +22,16 @@ namespace CISS311GroupProject
             Forms.Instructor.InstructorViewCourses viewCourses = new Forms.Instructor.InstructorViewCourses();
             viewCourses.ShowDialog();
         }
+
+        private void updateGradesButton_Click(object sender, EventArgs e)
+        {
+            Forms.Instructor.InstructorUpdateGrades updateGrades = new Forms.Instructor.InstructorUpdateGrades();
+            updateGrades.ShowDialog();
+        }
+
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
