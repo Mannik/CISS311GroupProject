@@ -149,11 +149,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TinyCollegeDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="TinyCollegeDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TinyCollegeDataSet1.xsd</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Forms\Admin\AddCourseForm.resx">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -226,17 +221,6 @@
     </None>
     <None Include="TinyCollegeDataSet.xss">
       <DependentUpon>TinyCollegeDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="TinyCollegeDataSet1.xsc">
-      <DependentUpon>TinyCollegeDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="TinyCollegeDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>TinyCollegeDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="TinyCollegeDataSet1.xss">
-      <DependentUpon>TinyCollegeDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

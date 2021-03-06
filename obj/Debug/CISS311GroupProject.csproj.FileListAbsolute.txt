@@ -128,3 +128,4 @@ X:\ccis\Advanced Agile\CISS311GroupProject\obj\Debug\CISS311GroupProject.Forms.I
 X:\ccis\Advanced Agile\CISS311GroupProject\obj\Debug\CISS311GroupProject.StudentEnrollCourse.resources
 X:\ccis\Advanced Agile\CISS311GroupProject\obj\Debug\CISS311GroupProject.StudentForm.resources
 C:\Users\steve\Documents\repos\CISS311GroupProject\obj\Debug\CISS311GroupProject.Forms.Instructor.InstructorUpdateGrades.resources
+X:\ccis\Advanced Agile\CISS311GroupProject\obj\Debug\CISS311GroupProject.Forms.Instructor.InstructorUpdateGrades.resources

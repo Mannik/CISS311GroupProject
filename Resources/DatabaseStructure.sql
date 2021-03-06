@@ -76,7 +76,7 @@ CREATE TABLE course
 
            courseId INT NOT NULL,
 		   
-		   grade CHAR(10) NOT NULL ,
+		   grade CHAR(10) ,
 
            
 

@@ -896,7 +896,6 @@ namespace CISS311GroupProject {
                 base.Columns.Add(this.columngrade);
                 this.columnstudentId.AllowDBNull = false;
                 this.columncourseId.AllowDBNull = false;
-                this.columngrade.AllowDBNull = false;
                 this.columngrade.MaxLength = 10;
             }
             
@@ -1785,7 +1784,12 @@ namespace CISS311GroupProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string grade {
                 get {
-                    return ((string)(this[this.tablecourseXstudent.gradeColumn]));
+                    if (this.IsgradeNull()) {
+                        return null;
+                    }
+                    else {
+                        return ((string)(this[this.tablecourseXstudent.gradeColumn]));
+                    }
                 }
                 set {
                     this[this.tablecourseXstudent.gradeColumn] = value;
@@ -1812,6 +1816,18 @@ namespace CISS311GroupProject {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["fk_cxs_student"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsgradeNull() {
+                return this.IsNull(this.tablecourseXstudent.gradeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetgradeNull() {
+                this[this.tablecourseXstudent.gradeColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2660,7 +2676,7 @@ SELECT courseId, title, employeeId, seats, maxSeats, isAvailable FROM course WHE
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(studentId));
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(courseId));
             if ((grade == null)) {
-                throw new global::System.ArgumentNullException("grade");
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(grade));
