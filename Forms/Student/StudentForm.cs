@@ -72,13 +72,14 @@ namespace CISS311GroupProject
                 adapter.Fill(studentTable);
                 DataRow dr = studentTable.Rows[0];
 
-                if (int.Parse(dr["credits"].ToString()) >= int.Parse(120.ToString()))
+                if (int.Parse(dr["credits"].ToString()) >= 120)
                 {
                     MessageBox.Show("Congratulations! You have enough credits to graduate.");
                 }
                 else
                 {
                     MessageBox.Show("Sorry, you do not have enough credits to graduate. You need at least 120 and you only have " + dr["credits"].ToString() + ".");
+                    remainingCreditsLabel.Text = "Remaining Credits: " + (120 - int.Parse(dr["credits"].ToString()));
                 }
 
             }
