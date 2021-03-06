@@ -40,6 +40,7 @@ namespace CISS311GroupProject
             //call save method then clear form
             SaveFormData();
             ClearForm();
+            getStudentCount();
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -66,6 +67,8 @@ namespace CISS311GroupProject
                 {
                     comd.Parameters.AddWithValue("@hours", 0);
                 }
+                comd.ExecuteScalar();
+                MessageBox.Show("New student added.");
             }
         }
 
@@ -87,8 +90,14 @@ namespace CISS311GroupProject
         private void AdminAddStudent_Load(object sender, EventArgs e)
         {
             //place any code here that needs to be ran on form load
+            getStudentCount();
+        }
+
+        private void getStudentCount()
+        {
             //connect to the sql server, query the database, collect the data, and display it on the form
-           try
+
+            try
             {
                 using (conn = new SqlConnection(connString))
                 using (SqlDataAdapter adapter = new SqlDataAdapter
@@ -96,8 +105,8 @@ namespace CISS311GroupProject
                 {
                     DataTable studentTable = new DataTable();
                     adapter.Fill(studentTable);
-                    studentCountLabel.Text = "studentCount";
-
+                    DataRow dr = studentTable.Rows[0];
+                    studentCountLabel.Text = dr["studentCount"].ToString();
                 }
 
             }

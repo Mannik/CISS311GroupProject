@@ -91,7 +91,6 @@ C:\Users\zbowe\Desktop\ciss\advanced agile\CISS311GroupProject\obj\Debug\CISS311
 C:\Users\brent_000\Documents\CISS311GroupProject\obj\Debug\CISS311GroupProject.AddCourseForm.resources
 C:\Users\brent_000\Documents\CISS311GroupProject\obj\Debug\CISS311GroupProject.Forms.Admin.AdminAddInstructor.resources
 C:\Users\brent_000\Documents\CISS311GroupProject\obj\Debug\CISS311GroupProject.AdminForm.resources
-C:\Users\brent_000\Documents\CISS311GroupProject\obj\Debug\CISS311GroupProject.AdministratorViewCourses.resources
 C:\Users\brent_000\Documents\CISS311GroupProject\obj\Debug\CISS311GroupProject.Forms.Admin.AdminViewClass.resources
 C:\Users\brent_000\Documents\CISS311GroupProject\obj\Debug\CISS311GroupProject.Forms.Admin.CourseSearchForm.resources
 C:\Users\brent_000\Documents\CISS311GroupProject\obj\Debug\CISS311GroupProject.Forms.Admin.EmployeeSearchForm.resources
