@@ -40,6 +40,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.studentTotalCreditsLabel = new System.Windows.Forms.Label();
             this.closeButton = new System.Windows.Forms.Button();
+            this.remainingCreditsLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // enrollButton
@@ -58,7 +59,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(13, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.Size = new System.Drawing.Size(67, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "Student ID:";
             // 
@@ -84,7 +85,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(357, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.Size = new System.Drawing.Size(70, 15);
             this.label2.TabIndex = 4;
             this.label2.Text = "First Name:";
             // 
@@ -94,7 +95,7 @@
             this.firstNameLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.firstNameLabel.Location = new System.Drawing.Point(436, 23);
             this.firstNameLabel.Name = "firstNameLabel";
-            this.firstNameLabel.Size = new System.Drawing.Size(2, 15);
+            this.firstNameLabel.Size = new System.Drawing.Size(2, 17);
             this.firstNameLabel.TabIndex = 5;
             // 
             // lastNameLabel
@@ -103,7 +104,7 @@
             this.lastNameLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lastNameLabel.Location = new System.Drawing.Point(603, 23);
             this.lastNameLabel.Name = "lastNameLabel";
-            this.lastNameLabel.Size = new System.Drawing.Size(2, 15);
+            this.lastNameLabel.Size = new System.Drawing.Size(2, 17);
             this.lastNameLabel.TabIndex = 7;
             // 
             // label5
@@ -111,7 +112,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(524, 23);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 13);
+            this.label5.Size = new System.Drawing.Size(70, 15);
             this.label5.TabIndex = 6;
             this.label5.Text = "Last Name:";
             // 
@@ -130,7 +131,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(16, 60);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 13);
+            this.label3.Size = new System.Drawing.Size(78, 15);
             this.label3.TabIndex = 9;
             this.label3.Text = "Total Credits:";
             // 
@@ -140,7 +141,7 @@
             this.studentTotalCreditsLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.studentTotalCreditsLabel.Location = new System.Drawing.Point(93, 60);
             this.studentTotalCreditsLabel.Name = "studentTotalCreditsLabel";
-            this.studentTotalCreditsLabel.Size = new System.Drawing.Size(2, 15);
+            this.studentTotalCreditsLabel.Size = new System.Drawing.Size(2, 17);
             this.studentTotalCreditsLabel.TabIndex = 10;
             // 
             // closeButton
@@ -154,11 +155,22 @@
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
+            // remainingCreditsLabel
+            // 
+            this.remainingCreditsLabel.AutoSize = true;
+            this.remainingCreditsLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.remainingCreditsLabel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.remainingCreditsLabel.Location = new System.Drawing.Point(234, 58);
+            this.remainingCreditsLabel.Name = "remainingCreditsLabel";
+            this.remainingCreditsLabel.Size = new System.Drawing.Size(2, 17);
+            this.remainingCreditsLabel.TabIndex = 13;
+            // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.remainingCreditsLabel);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.studentTotalCreditsLabel);
             this.Controls.Add(this.label3);
@@ -192,5 +204,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label studentTotalCreditsLabel;
         private System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.Label remainingCreditsLabel;
     }
 }
