@@ -129,3 +129,27 @@ X:\ccis\Advanced Agile\CISS311GroupProject\obj\Debug\CISS311GroupProject.Student
 X:\ccis\Advanced Agile\CISS311GroupProject\obj\Debug\CISS311GroupProject.StudentForm.resources
 C:\Users\steve\Documents\repos\CISS311GroupProject\obj\Debug\CISS311GroupProject.Forms.Instructor.InstructorUpdateGrades.resources
 X:\ccis\Advanced Agile\CISS311GroupProject\obj\Debug\CISS311GroupProject.Forms.Instructor.InstructorUpdateGrades.resources
+C:\Users\Xachary\Desktop\CISS311GroupProject\bin\Debug\CISS311GroupProject.exe.config
+C:\Users\Xachary\Desktop\CISS311GroupProject\bin\Debug\CISS311GroupProject.exe
+C:\Users\Xachary\Desktop\CISS311GroupProject\bin\Debug\CISS311GroupProject.pdb
+C:\Users\Xachary\Desktop\CISS311GroupProject\obj\Debug\CISS311GroupProject.csprojAssemblyReference.cache
+C:\Users\Xachary\Desktop\CISS311GroupProject\obj\Debug\CISS311GroupProject.AddCourseForm.resources
+C:\Users\Xachary\Desktop\CISS311GroupProject\obj\Debug\CISS311GroupProject.Forms.Admin.AdminAddInstructor.resources
+C:\Users\Xachary\Desktop\CISS311GroupProject\obj\Debug\CISS311GroupProject.AdminAddStudent.resources
+C:\Users\Xachary\Desktop\CISS311GroupProject\obj\Debug\CISS311GroupProject.AdminForm.resources
+C:\Users\Xachary\Desktop\CISS311GroupProject\obj\Debug\CISS311GroupProject.Forms.Admin.AdminViewClass.resources
+C:\Users\Xachary\Desktop\CISS311GroupProject\obj\Debug\CISS311GroupProject.Forms.Admin.CourseSearchForm.resources
+C:\Users\Xachary\Desktop\CISS311GroupProject\obj\Debug\CISS311GroupProject.Forms.Admin.EmployeeSearchForm.resources
+C:\Users\Xachary\Desktop\CISS311GroupProject\obj\Debug\CISS311GroupProject.InstructorForm.resources
+C:\Users\Xachary\Desktop\CISS311GroupProject\obj\Debug\CISS311GroupProject.Forms.Instructor.InstructorUpdateGrades.resources
+C:\Users\Xachary\Desktop\CISS311GroupProject\obj\Debug\CISS311GroupProject.Forms.Instructor.InstructorViewCourses.resources
+C:\Users\Xachary\Desktop\CISS311GroupProject\obj\Debug\CISS311GroupProject.MainForm.resources
+C:\Users\Xachary\Desktop\CISS311GroupProject\obj\Debug\CISS311GroupProject.ManageCourseForm.resources
+C:\Users\Xachary\Desktop\CISS311GroupProject\obj\Debug\CISS311GroupProject.StudentEnrollCourse.resources
+C:\Users\Xachary\Desktop\CISS311GroupProject\obj\Debug\CISS311GroupProject.StudentForm.resources
+C:\Users\Xachary\Desktop\CISS311GroupProject\obj\Debug\CISS311GroupProject.Properties.Resources.resources
+C:\Users\Xachary\Desktop\CISS311GroupProject\obj\Debug\CISS311GroupProject.csproj.GenerateResource.cache
+C:\Users\Xachary\Desktop\CISS311GroupProject\obj\Debug\CISS311GroupProject.csproj.CoreCompileInputs.cache
+C:\Users\Xachary\Desktop\CISS311GroupProject\obj\Debug\CISS311GroupProject.exe
+C:\Users\Xachary\Desktop\CISS311GroupProject\obj\Debug\CISS311GroupProject.pdb
+C:\Users\Xachary\Desktop\CISS311GroupProject\obj\Debug\CISS311GroupProject.Forms.Student.StudentViewCourses.resources

@@ -17,6 +17,7 @@ namespace CISS311GroupProject
         string connectionString;
         SqlDataAdapter adapter;
         SqlConnection conn;
+        int studentId;
 
         public StudentForm()
         {
@@ -36,7 +37,6 @@ namespace CISS311GroupProject
         {
             // finds and fills in student information off student Id search
             fillStudentInfo();
-            checkCreditCount();
 
         }
 
@@ -51,11 +51,19 @@ namespace CISS311GroupProject
 
                 DataTable studentTable = new DataTable();
                 adapter.Fill(studentTable);
-                DataRow dr = studentTable.Rows[0];
-                firstNameLabel.Text = dr["firstName"].ToString();
-                lastNameLabel.Text = dr["lastName"].ToString();
-                studentTotalCreditsLabel.Text = dr["credits"].ToString();
-
+                if (studentTable.Rows.Count < 1)
+                {
+                    MessageBox.Show("No Student Found.");
+                }
+                else
+                {
+                    DataRow dr = studentTable.Rows[0];
+                    firstNameLabel.Text = dr["firstName"].ToString();
+                    lastNameLabel.Text = dr["lastName"].ToString();
+                    studentTotalCreditsLabel.Text = dr["credits"].ToString();
+                    studentId = int.Parse(studentIdTextBox.Text);
+                    checkCreditCount();
+                }
             }
         }
 
@@ -88,6 +96,18 @@ namespace CISS311GroupProject
         private void closeButton_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void viewCoursesButton_Click(object sender, EventArgs e)
+        {
+            Forms.Student.StudentViewCourses studentViewCourses = new Forms.Student.StudentViewCourses(studentId);
+            studentViewCourses.ShowDialog();
+        }
+
+        private void enrollButton_Click_1(object sender, EventArgs e)
+        {
+            StudentEnrollCourse studentEnrollCourse = new StudentEnrollCourse(int.Parse(studentIdTextBox.Text));
+            studentEnrollCourse.ShowDialog();
         }
     }
 }
