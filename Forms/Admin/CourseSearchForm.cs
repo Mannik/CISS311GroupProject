@@ -46,5 +46,18 @@ namespace CISS311GroupProject.Forms.Admin
                 courseId = int.Parse(Convert.ToString(selectedRow.Cells["courseId"].Value));
             }
         }
+
+        private void courseDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (courseDataGrid.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = courseDataGrid.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = courseDataGrid.Rows[selectedrowindex];
+                courseId = int.Parse(Convert.ToString(selectedRow.Cells["courseId"].Value));
+            }
+            //SelectClicked event invoke When select button is pushed get employeeId from selected row, and send to AdminAddInstructor.cs
+            SelectClicked?.Invoke(courseId, e);
+            Close();
+        }
     }
 }

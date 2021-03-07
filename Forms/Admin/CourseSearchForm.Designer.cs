@@ -47,6 +47,7 @@ namespace CISS311GroupProject.Forms.Admin
             this.courseDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.courseDataGrid.Size = new System.Drawing.Size(348, 533);
             this.courseDataGrid.TabIndex = 26;
+            this.courseDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.courseDataGrid_CellDoubleClick);
             this.courseDataGrid.SelectionChanged += new System.EventHandler(this.courseDataGrid_SelectionChanged);
             // 
             // selectBtn

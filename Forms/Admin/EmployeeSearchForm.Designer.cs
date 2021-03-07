@@ -58,6 +58,7 @@ namespace CISS311GroupProject.Forms.Admin
             this.employeeDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.employeeDataGrid.Size = new System.Drawing.Size(413, 533);
             this.employeeDataGrid.TabIndex = 24;
+            this.employeeDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeeDataGrid_CellDoubleClick);
             this.employeeDataGrid.SelectionChanged += new System.EventHandler(this.employeeDataGrid_SelectionChanged);
             // 
             // EmployeeSearchForm
