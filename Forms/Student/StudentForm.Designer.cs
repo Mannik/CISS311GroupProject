@@ -169,6 +169,7 @@
             this.studentIdTextBox.Name = "studentIdTextBox";
             this.studentIdTextBox.Size = new System.Drawing.Size(100, 20);
             this.studentIdTextBox.TabIndex = 17;
+            this.studentIdTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.studentIdTextBox_KeyPress);
             // 
             // label1
             // 

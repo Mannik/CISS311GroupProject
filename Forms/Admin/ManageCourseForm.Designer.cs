@@ -138,6 +138,7 @@ namespace CISS311GroupProject
             this.updatedmaxSeatingTextBox.Name = "updatedmaxSeatingTextBox";
             this.updatedmaxSeatingTextBox.Size = new System.Drawing.Size(56, 20);
             this.updatedmaxSeatingTextBox.TabIndex = 10;
+            this.updatedmaxSeatingTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.updatedmaxSeatingTextBox_KeyPress);
             // 
             // label5
             // 
@@ -216,6 +217,7 @@ namespace CISS311GroupProject
             this.courseIdTextBox.Name = "courseIdTextBox";
             this.courseIdTextBox.Size = new System.Drawing.Size(100, 20);
             this.courseIdTextBox.TabIndex = 1;
+            this.courseIdTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.courseIdTextBox_KeyPress);
             // 
             // label1
             // 

@@ -40,7 +40,7 @@ namespace CISS311GroupProject
                 adapter.Fill(checkSeats);
                 DataRow dr = checkSeats.Rows[0];
 
-                if (int.Parse(dr["seats"].ToString()) > int.Parse(dr["maxSeats"].ToString()))
+                if (int.Parse(dr["seats"].ToString()) >= int.Parse(dr["maxSeats"].ToString()))
                 {
                     overbooked = true;
                     MessageBox.Show("Course is overbooked. Not available for registration.");

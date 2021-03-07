@@ -73,6 +73,7 @@ namespace CISS311GroupProject
             this.seatsTextBox.Name = "seatsTextBox";
             this.seatsTextBox.Size = new System.Drawing.Size(64, 20);
             this.seatsTextBox.TabIndex = 5;
+            this.seatsTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.seatsTextBox_KeyPress);
             // 
             // label3
             // 

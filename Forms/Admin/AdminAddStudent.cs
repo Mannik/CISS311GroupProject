@@ -71,6 +71,7 @@ namespace CISS311GroupProject
                         else
                         {
                             MessageBox.Show("Please enter a valid number of credits");
+                            
                         }
                     }
                     else
@@ -129,6 +130,14 @@ namespace CISS311GroupProject
             catch
             {
 
+            }
+        }
+
+        private void hoursTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

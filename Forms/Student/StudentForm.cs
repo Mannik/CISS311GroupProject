@@ -92,7 +92,7 @@ namespace CISS311GroupProject
                 else
                 {
                     MessageBox.Show("Sorry, you do not have enough credits to graduate. You need at least 120 and you only have " + dr["credits"].ToString() + ".");
-                    remainingCreditsLabel.Text = "Remaining Credits: " + (120 - int.Parse(dr["credits"].ToString()));
+                    remainingCreditsLabel.Text = "" + (120 - int.Parse(dr["credits"].ToString()));
                 }
 
             }
@@ -174,6 +174,15 @@ namespace CISS311GroupProject
                 fillStudentInfo();
 
             }
+
+        private void studentIdTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
     }
 }
 
