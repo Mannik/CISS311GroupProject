@@ -40,12 +40,14 @@
             this.enrollCloseButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
             this.courseSelectionComboBox = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 112);
+            this.label1.Location = new System.Drawing.Point(17, 84);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 13);
             this.label1.TabIndex = 2;
@@ -54,7 +56,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 161);
+            this.label2.Location = new System.Drawing.Point(17, 133);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 3;
@@ -63,7 +65,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(39, 209);
+            this.label3.Location = new System.Drawing.Point(17, 181);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 4;
@@ -72,7 +74,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(39, 258);
+            this.label4.Location = new System.Drawing.Point(17, 230);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 13);
             this.label4.TabIndex = 5;
@@ -82,7 +84,7 @@
             // 
             this.courseTitleLabel.AutoSize = true;
             this.courseTitleLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.courseTitleLabel.Location = new System.Drawing.Point(156, 112);
+            this.courseTitleLabel.Location = new System.Drawing.Point(134, 84);
             this.courseTitleLabel.Name = "courseTitleLabel";
             this.courseTitleLabel.Size = new System.Drawing.Size(2, 15);
             this.courseTitleLabel.TabIndex = 6;
@@ -91,7 +93,7 @@
             // 
             this.instructorLabel.AutoSize = true;
             this.instructorLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.instructorLabel.Location = new System.Drawing.Point(156, 161);
+            this.instructorLabel.Location = new System.Drawing.Point(134, 133);
             this.instructorLabel.Name = "instructorLabel";
             this.instructorLabel.Size = new System.Drawing.Size(2, 15);
             this.instructorLabel.TabIndex = 7;
@@ -100,7 +102,7 @@
             // 
             this.seatCountLabel.AutoSize = true;
             this.seatCountLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.seatCountLabel.Location = new System.Drawing.Point(156, 209);
+            this.seatCountLabel.Location = new System.Drawing.Point(134, 181);
             this.seatCountLabel.Name = "seatCountLabel";
             this.seatCountLabel.Size = new System.Drawing.Size(2, 15);
             this.seatCountLabel.TabIndex = 8;
@@ -109,17 +111,17 @@
             // 
             this.isAvailableLabel.AutoSize = true;
             this.isAvailableLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.isAvailableLabel.Location = new System.Drawing.Point(156, 258);
+            this.isAvailableLabel.Location = new System.Drawing.Point(134, 230);
             this.isAvailableLabel.Name = "isAvailableLabel";
             this.isAvailableLabel.Size = new System.Drawing.Size(2, 15);
             this.isAvailableLabel.TabIndex = 9;
             // 
             // enrollNewButton
             // 
-            this.enrollNewButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enrollNewButton.Location = new System.Drawing.Point(42, 366);
+            this.enrollNewButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.enrollNewButton.Location = new System.Drawing.Point(20, 274);
             this.enrollNewButton.Name = "enrollNewButton";
-            this.enrollNewButton.Size = new System.Drawing.Size(178, 43);
+            this.enrollNewButton.Size = new System.Drawing.Size(116, 43);
             this.enrollNewButton.TabIndex = 10;
             this.enrollNewButton.Text = "Enroll && &New";
             this.enrollNewButton.UseVisualStyleBackColor = true;
@@ -127,10 +129,10 @@
             // 
             // enrollCloseButton
             // 
-            this.enrollCloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enrollCloseButton.Location = new System.Drawing.Point(255, 366);
+            this.enrollCloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.enrollCloseButton.Location = new System.Drawing.Point(142, 274);
             this.enrollCloseButton.Name = "enrollCloseButton";
-            this.enrollCloseButton.Size = new System.Drawing.Size(172, 43);
+            this.enrollCloseButton.Size = new System.Drawing.Size(119, 43);
             this.enrollCloseButton.TabIndex = 11;
             this.enrollCloseButton.Text = "&Enroll && Close";
             this.enrollCloseButton.UseVisualStyleBackColor = true;
@@ -138,10 +140,10 @@
             // 
             // closeButton
             // 
-            this.closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeButton.Location = new System.Drawing.Point(462, 366);
+            this.closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.closeButton.Location = new System.Drawing.Point(267, 274);
             this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(172, 43);
+            this.closeButton.Size = new System.Drawing.Size(83, 43);
             this.closeButton.TabIndex = 12;
             this.closeButton.Text = "&Close";
             this.closeButton.UseVisualStyleBackColor = true;
@@ -150,17 +152,30 @@
             // courseSelectionComboBox
             // 
             this.courseSelectionComboBox.FormattingEnabled = true;
-            this.courseSelectionComboBox.Location = new System.Drawing.Point(42, 40);
+            this.courseSelectionComboBox.Location = new System.Drawing.Point(20, 12);
             this.courseSelectionComboBox.Name = "courseSelectionComboBox";
             this.courseSelectionComboBox.Size = new System.Drawing.Size(352, 21);
             this.courseSelectionComboBox.TabIndex = 13;
             this.courseSelectionComboBox.SelectedIndexChanged += new System.EventHandler(this.courseSelectionComboBox_SelectedIndexChanged);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = global::CISS311GroupProject.Properties.Resources.TinyCollegeShadow;
+            this.pictureBox1.InitialImage = global::CISS311GroupProject.Properties.Resources.TinyCollegeShadow;
+            this.pictureBox1.Location = new System.Drawing.Point(356, 248);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(85, 69);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
             // StudentEnrollCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(683, 450);
+            this.ClientSize = new System.Drawing.Size(451, 324);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.courseSelectionComboBox);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.enrollCloseButton);
@@ -176,6 +191,7 @@
             this.Name = "StudentEnrollCourse";
             this.Text = "StudentEnrollCourse";
             this.Load += new System.EventHandler(this.StudentEnrollCourse_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,5 +210,6 @@
         private System.Windows.Forms.Button enrollCloseButton;
         private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.ComboBox courseSelectionComboBox;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
