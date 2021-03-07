@@ -20,6 +20,11 @@ namespace CISS311GroupProject
             studentId = studentFormId;
         }
 
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         private void StudentViewCourses_Load(object sender, EventArgs e)
         {
             using (conn = new SqlConnection(connectionString))
@@ -53,11 +58,6 @@ namespace CISS311GroupProject
 
 
             }
-        }
-
-        private void closeButton_Click(object sender, EventArgs e)
-        {
-            Close();
         }
     }
 }

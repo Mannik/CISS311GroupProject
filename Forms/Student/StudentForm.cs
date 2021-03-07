@@ -27,7 +27,8 @@ namespace CISS311GroupProject
     .ConnectionString;
         }
 
-        private void enrollButton_Click(object sender, EventArgs e)
+
+        private void button1_Click(object sender, EventArgs e)
         {
             //before opening the child form check for student ID
             if (studentIdTextBox.Text == string.Empty)
@@ -37,18 +38,11 @@ namespace CISS311GroupProject
             }
             else
             {
-                StudentEnrollCourse studentEnrollCourse = new StudentEnrollCourse(int.Parse(studentIdTextBox.Text));
-                studentEnrollCourse.ShowDialog();
+                StudentViewCourses studentViewCourses = new StudentViewCourses(int.Parse(studentIdTextBox.Text));
+                studentViewCourses.ShowDialog();
             }
-
         }
 
-        private void findButton_Click(object sender, EventArgs e)
-        {
-            // finds and fills in student information off student Id search
-            fillStudentInfo();
-
-        }
 
         private void fillStudentInfo()
         {
@@ -78,7 +72,7 @@ namespace CISS311GroupProject
             }
         }
 
-        private void checkCreditCount()
+            private void checkCreditCount()
         {
             // Find a student and check if they have enough credits to graduate.
             using (conn = new SqlConnection(connectionString))
@@ -98,15 +92,10 @@ namespace CISS311GroupProject
                 else
                 {
                     MessageBox.Show("Sorry, you do not have enough credits to graduate. You need at least 120 and you only have " + dr["credits"].ToString() + ".");
-                    remainingCreditsLabel.Text = (120 - int.Parse(dr["credits"].ToString())).ToString();
+                    remainingCreditsLabel.Text = "Remaining Credits: " + (120 - int.Parse(dr["credits"].ToString()));
                 }
 
             }
-        }
-
-        private void closeButton_Click(object sender, EventArgs e)
-        {
-            Close();
         }
 
 
@@ -145,17 +134,46 @@ namespace CISS311GroupProject
         private void viewCoursesButton_Click(object sender, EventArgs e)
         {
             //before opening the child form check for student ID
-            if (studentIdTextBox.Text == string.Empty)
+            if (studentId < 10000)
             {
-                MessageBox.Show("Please enter a student ID.");
+                MessageBox.Show("Please enter a valid student ID.");
                 studentIdTextBox.Focus();
             }
             else
             {
-                StudentViewCourses studentViewCourses = new StudentViewCourses(int.Parse(studentIdTextBox.Text));
+                StudentViewCourses studentViewCourses = new StudentViewCourses(studentId);
                 studentViewCourses.ShowDialog();
             }
         }
+
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void enrollButton_Click(object sender, EventArgs e)
+            {
+                //before opening the child form check for student ID
+                if (studentId < 10000)
+                {
+                    MessageBox.Show("Please enter a valid student ID.");
+                    studentIdTextBox.Focus();
+                }
+                else
+                {
+                    StudentEnrollCourse studentEnrollCourse = new StudentEnrollCourse(int.Parse(studentIdTextBox.Text));
+                    studentEnrollCourse.ShowDialog();
+                }
+
+            }
+
+        private void findButton_Click(object sender, EventArgs e)
+            {
+                // finds and fills in student information off student Id search
+                fillStudentInfo();
+
+            }
     }
 }
 
