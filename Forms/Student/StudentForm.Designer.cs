@@ -68,6 +68,8 @@
             this.studentIdTextBox.Name = "studentIdTextBox";
             this.studentIdTextBox.Size = new System.Drawing.Size(100, 20);
             this.studentIdTextBox.TabIndex = 2;
+            this.studentIdTextBox.WordWrap = false;
+            this.studentIdTextBox.TextChanged += new System.EventHandler(this.studentIdTextBox_TextChanged);
             // 
             // findButton
             // 
@@ -124,6 +126,7 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Vi&ew Courses";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 

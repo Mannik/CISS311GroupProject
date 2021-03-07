@@ -1,4 +1,4 @@
-﻿namespace CISS311GroupProject.Forms.Student
+﻿namespace CISS311GroupProject
 {
     partial class StudentViewCourses
     {

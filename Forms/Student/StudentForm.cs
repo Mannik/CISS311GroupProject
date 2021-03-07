@@ -28,8 +28,33 @@ namespace CISS311GroupProject
 
         private void enrollButton_Click(object sender, EventArgs e)
         {
-            StudentEnrollCourse studentEnrollCourse = new StudentEnrollCourse(int.Parse(studentIdTextBox.Text));
-            studentEnrollCourse.ShowDialog();
+            //before opening the child form check for student ID
+            if (studentIdTextBox.Text == string.Empty)
+            {
+                MessageBox.Show("Please enter a student ID.");
+                studentIdTextBox.Focus();
+            }
+            else
+            {
+                StudentEnrollCourse studentEnrollCourse = new StudentEnrollCourse(int.Parse(studentIdTextBox.Text));
+                studentEnrollCourse.ShowDialog();
+            }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //before opening the child form check for student ID
+            if (studentIdTextBox.Text == string.Empty)
+            {
+                MessageBox.Show("Please enter a student ID.");
+                studentIdTextBox.Focus();
+            }
+            else
+            {
+                StudentViewCourses studentViewCourses = new StudentViewCourses(int.Parse(studentIdTextBox.Text));
+                studentViewCourses.ShowDialog();
+            }
         }
 
         private void findButton_Click(object sender, EventArgs e)
@@ -42,6 +67,7 @@ namespace CISS311GroupProject
 
         private void fillStudentInfo()
         {
+            //fill in the student information labels with the data from the select query
             using (conn = new SqlConnection(connectionString))
             using (SqlCommand comd = new SqlCommand(
                 "SELECT * from student where studentId = @studentId", conn))
@@ -87,6 +113,40 @@ namespace CISS311GroupProject
         private void closeButton_Click(object sender, EventArgs e)
         {
             Close();
+            
+        }
+
+
+        //this code was taken and modified from: https://stackoverflow.com/questions/16871104/restricting-input-to-numbers-only-in-textbox-c
+        //this code prevents non numeric characters from being entered in the textbox
+        void studentIdTextBox_TextChanged(object sender, EventArgs e)
+        {
+            
+            bool enteredLetter = false;
+            Queue<char> text = new Queue<char>();
+            foreach (var ch in this.studentIdTextBox.Text)
+            {
+                if (char.IsDigit(ch))
+                {
+                    text.Enqueue(ch);
+                }
+                else
+                {
+                    enteredLetter = true;
+                }
+            }
+
+            if (enteredLetter)
+            {
+                StringBuilder sb = new StringBuilder();
+                while (text.Count > 0)
+                {
+                    sb.Append(text.Dequeue());
+                }
+
+                this.studentIdTextBox.Text = sb.ToString();
+                this.studentIdTextBox.SelectionStart = this.studentIdTextBox.Text.Length;
+            }
         }
     }
 }
