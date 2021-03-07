@@ -52,24 +52,40 @@ namespace CISS311GroupProject
         private void SaveFormData()
         {
             //collect form data and input it to the database
-            using (conn = new SqlConnection(connString))
-            using (SqlCommand comd = new SqlCommand
-                ("INSERT INTO student (firstName, lastName, credits) VALUES (@firstName, @lastName, @hours)", conn))
+            if ((!(string.IsNullOrWhiteSpace(firstNameTextBox.Text))) && (!(string.IsNullOrWhiteSpace(lastNameTextBox.Text))))
             {
-                conn.Open();
-                comd.Parameters.AddWithValue("@firstName", firstNameTextBox.Text);
-                comd.Parameters.AddWithValue("@lastName", lastNameTextBox.Text);
-                if (incomingCreditsCheckBox.Checked == true)
+                int result;
+                using (conn = new SqlConnection(connString))
+                using (SqlCommand comd = new SqlCommand
+                    ("INSERT INTO student (firstName, lastName, credits) VALUES (@firstName, @lastName, @hours)", conn))
                 {
-                    comd.Parameters.AddWithValue("@hours", hoursTextBox.Text);
+                    conn.Open();
+                    comd.Parameters.AddWithValue("@firstName", firstNameTextBox.Text);
+                    comd.Parameters.AddWithValue("@lastName", lastNameTextBox.Text);
+                    if (incomingCreditsCheckBox.Checked == true)
+                    {
+                        if (int.TryParse(hoursTextBox.Text, out result))
+                        {
+                            comd.Parameters.AddWithValue("@hours", hoursTextBox.Text);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please enter a valid number of credits");
+                        }
+                    }
+                    else
+                    {
+                        comd.Parameters.AddWithValue("@hours", 0);
+                    }
+                    comd.ExecuteScalar();
+                    MessageBox.Show("New student added.");
                 }
-                else
-                {
-                    comd.Parameters.AddWithValue("@hours", 0);
-                }
-                comd.ExecuteScalar();
-                MessageBox.Show("New student added.");
             }
+            else
+            {
+                MessageBox.Show("Please enter the student's first and last name");
+            }
+            
         }
 
         private void ClearForm()
