@@ -160,14 +160,14 @@ namespace CISS311GroupProject
 
         private void viewCoursesButton_Click(object sender, EventArgs e)
         {
-            Forms.Student.StudentViewCourses studentViewCourses = new Forms.Student.StudentViewCourses(studentId);
+            StudentViewCourses studentViewCourses = new StudentViewCourses(studentId);
             studentViewCourses.ShowDialog();
         }
 
         private void enrollButton_Click_1(object sender, EventArgs e)
         {
-            StudentEnrollCourse studentEnrollCourse = new StudentEnrollCourse(int.Parse(studentIdTextBox.Text));
-            studentEnrollCourse.ShowDialog();
+            //StudentEnrollCourse studentEnrollCourse = new StudentEnrollCourse(int.Parse(studentIdTextBox.Text));
+            //studentEnrollCourse.ShowDialog();
         }
     }
 }

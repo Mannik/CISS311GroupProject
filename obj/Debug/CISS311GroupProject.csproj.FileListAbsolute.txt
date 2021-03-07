@@ -177,3 +177,4 @@ C:\Users\steve\Documents\GitHub\CISS311GroupProject\obj\Debug\CISS311GroupProjec
 C:\Users\steve\Documents\GitHub\CISS311GroupProject\obj\Debug\CISS311GroupProject.csproj.CoreCompileInputs.cache
 C:\Users\steve\Documents\GitHub\CISS311GroupProject\obj\Debug\CISS311GroupProject.exe
 C:\Users\steve\Documents\GitHub\CISS311GroupProject\obj\Debug\CISS311GroupProject.pdb
+C:\Users\steve\Documents\repos\CISS311GroupProject\obj\Debug\CISS311GroupProject.StudentViewCourses.resources
