@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.courseTitleComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,16 +39,8 @@
             this.enrollNewButton = new System.Windows.Forms.Button();
             this.enrollCloseButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
+            this.courseSelectionComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // courseTitleComboBox
-            // 
-            this.courseTitleComboBox.FormattingEnabled = true;
-            this.courseTitleComboBox.Location = new System.Drawing.Point(42, 40);
-            this.courseTitleComboBox.Name = "courseTitleComboBox";
-            this.courseTitleComboBox.Size = new System.Drawing.Size(316, 21);
-            this.courseTitleComboBox.TabIndex = 0;
-            this.courseTitleComboBox.SelectedIndexChanged += new System.EventHandler(this.courseTitleComboBox_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -156,11 +147,21 @@
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
+            // courseSelectionComboBox
+            // 
+            this.courseSelectionComboBox.FormattingEnabled = true;
+            this.courseSelectionComboBox.Location = new System.Drawing.Point(42, 40);
+            this.courseSelectionComboBox.Name = "courseSelectionComboBox";
+            this.courseSelectionComboBox.Size = new System.Drawing.Size(352, 21);
+            this.courseSelectionComboBox.TabIndex = 13;
+            this.courseSelectionComboBox.SelectedIndexChanged += new System.EventHandler(this.courseSelectionComboBox_SelectedIndexChanged);
+            // 
             // StudentEnrollCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(683, 450);
+            this.Controls.Add(this.courseSelectionComboBox);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.enrollCloseButton);
             this.Controls.Add(this.enrollNewButton);
@@ -172,7 +173,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.courseTitleComboBox);
             this.Name = "StudentEnrollCourse";
             this.Text = "StudentEnrollCourse";
             this.Load += new System.EventHandler(this.StudentEnrollCourse_Load);
@@ -182,8 +182,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox courseTitleComboBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -195,5 +193,6 @@
         private System.Windows.Forms.Button enrollNewButton;
         private System.Windows.Forms.Button enrollCloseButton;
         private System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.ComboBox courseSelectionComboBox;
     }
 }
