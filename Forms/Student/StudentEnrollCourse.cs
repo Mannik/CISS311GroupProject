@@ -18,11 +18,11 @@ namespace CISS311GroupProject
         SqlConnection conn;
         int studentId;
 
-        public StudentEnrollCourse(int studentId)
+        public StudentEnrollCourse(int studentFormId)
         {
             InitializeComponent();
             connectionString = ConfigurationManager.ConnectionStrings["CISS311GroupProject.Properties.Settings.TinyCollegeConnectionString"].ConnectionString;
-            studentId = this.studentId;
+            studentId = studentFormId;
 
         }
 
@@ -61,30 +61,16 @@ namespace CISS311GroupProject
             {
                 DataTable courseTable = new DataTable();
                 adapter.Fill(courseTable);
-                courseTitleComboBox.DisplayMember = "title";
-                courseTitleComboBox.ValueMember = "courseId";
-                courseTitleComboBox.DataSource = courseTable;
+                courseSelectionComboBox.DisplayMember = "title";
+                courseSelectionComboBox.ValueMember = "courseId";
+                courseSelectionComboBox.DataSource = courseTable;
 
             }
         }
 
-        private void courseTitleComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            using (conn = new SqlConnection(connectionString))
-            using (SqlCommand comd = new SqlCommand ("SELECT * FROM course", conn))
-            using (SqlDataAdapter adapter = new SqlDataAdapter(comd))
-            {
-                comd.Parameters.AddWithValue("@courseId", courseTitleComboBox.SelectedValue.ToString());
-                DataTable courseTable = new DataTable();
-                adapter.Fill(courseTable);
-                courseTitleComboBox.DisplayMember = "title";
-                courseTitleComboBox.ValueMember = "courseId";
-                courseTitleComboBox.DataSource = courseTable;
-            }
-            fillCourseInfo();
-        }
 
-        private void fillCourseInfo()
+
+        private void fillCourseInfo(int selectedcourseId)
         {
             using (conn = new SqlConnection(connectionString))
             using (SqlCommand comd = new SqlCommand("SELECT course.courseId, course.title, course.employeeId, course.seats, course.maxSeats, course.isAvailable, " +
@@ -92,7 +78,7 @@ namespace CISS311GroupProject
                "ON course.employeeId = employee.employeeId WHERE course.courseId = @courseId", conn))
             using (SqlDataAdapter adapter = new SqlDataAdapter(comd))
             {
-                comd.Parameters.AddWithValue("@courseId", courseTitleComboBox.SelectedValue);
+                comd.Parameters.AddWithValue("@courseId", selectedcourseId);
                 DataTable courseTable = new DataTable();
                 adapter.Fill(courseTable);
                 DataRow dr = courseTable.Rows[0];
@@ -138,7 +124,7 @@ namespace CISS311GroupProject
 
         private void enrollStudent(int studentId)
         {
-            noOverbooking(courseTitleComboBox.SelectedValue.ToString());
+            noOverbooking(courseSelectionComboBox.SelectedValue.ToString());
 
             using (conn = new SqlConnection(connectionString))
             using (SqlCommand comd = new SqlCommand
@@ -146,10 +132,29 @@ namespace CISS311GroupProject
             {
                 conn.Open();
                 comd.Parameters.AddWithValue("@studentId", studentId);
-                comd.Parameters.AddWithValue("@courseId", courseTitleComboBox.SelectedValue);
+                comd.Parameters.AddWithValue("@courseId", courseSelectionComboBox.SelectedValue);
                 comd.ExecuteScalar();
                 MessageBox.Show("Course enrollment successful.");
             }
+            increaseSeatCount();
+        }
+
+        private void increaseSeatCount()
+        {
+
+            using (conn = new SqlConnection(connectionString))
+            using (SqlCommand comd = new SqlCommand("Update course SET seats = @seats WHERE courseId = @courseId", conn))
+            {
+                conn.Open();
+                comd.Parameters.AddWithValue("@courseId", courseSelectionComboBox.SelectedValue);
+                comd.Parameters.AddWithValue("@seats", (int.Parse(seatCountLabel.Text) + 1));
+                comd.ExecuteScalar();
+            }
+        }
+
+        private void courseSelectionComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            fillCourseInfo(int.Parse(courseSelectionComboBox.SelectedValue.ToString()));
         }
     }
 }
