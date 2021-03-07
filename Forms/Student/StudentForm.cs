@@ -27,21 +27,6 @@ namespace CISS311GroupProject
     .ConnectionString;
         }
 
-        private void enrollButton_Click(object sender, EventArgs e)
-        {
-            //before opening the child form check for student ID
-            if (studentIdTextBox.Text == string.Empty)
-            {
-                MessageBox.Show("Please enter a student ID.");
-                studentIdTextBox.Focus();
-            }
-            else
-            {
-                StudentEnrollCourse studentEnrollCourse = new StudentEnrollCourse(int.Parse(studentIdTextBox.Text));
-                studentEnrollCourse.ShowDialog();
-            }
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -58,12 +43,6 @@ namespace CISS311GroupProject
             }
         }
 
-        private void findButton_Click(object sender, EventArgs e)
-        {
-            // finds and fills in student information off student Id search
-            fillStudentInfo();
-
-        }
 
         private void fillStudentInfo()
         {
@@ -119,12 +98,6 @@ namespace CISS311GroupProject
             }
         }
 
-        private void closeButton_Click(object sender, EventArgs e)
-        {
-            Close();
-            
-        }
-
 
         //this code was taken and modified from: https://stackoverflow.com/questions/16871104/restricting-input-to-numbers-only-in-textbox-c
         //this code prevents non numeric characters from being entered in the textbox
@@ -160,15 +133,47 @@ namespace CISS311GroupProject
 
         private void viewCoursesButton_Click(object sender, EventArgs e)
         {
-            StudentViewCourses studentViewCourses = new StudentViewCourses(studentId);
-            studentViewCourses.ShowDialog();
+            //before opening the child form check for student ID
+            if (studentId < 10000)
+            {
+                MessageBox.Show("Please enter a valid student ID.");
+                studentIdTextBox.Focus();
+            }
+            else
+            {
+                StudentViewCourses studentViewCourses = new StudentViewCourses(studentId);
+                studentViewCourses.ShowDialog();
+            }
         }
 
-        private void enrollButton_Click_1(object sender, EventArgs e)
+
+        private void closeButton_Click(object sender, EventArgs e)
         {
-            //StudentEnrollCourse studentEnrollCourse = new StudentEnrollCourse(int.Parse(studentIdTextBox.Text));
-            //studentEnrollCourse.ShowDialog();
+            Close();
         }
+
+        private void enrollButton_Click(object sender, EventArgs e)
+            {
+                //before opening the child form check for student ID
+                if (studentId < 10000)
+                {
+                    MessageBox.Show("Please enter a valid student ID.");
+                    studentIdTextBox.Focus();
+                }
+                else
+                {
+                    StudentEnrollCourse studentEnrollCourse = new StudentEnrollCourse(int.Parse(studentIdTextBox.Text));
+                    studentEnrollCourse.ShowDialog();
+                }
+
+            }
+
+        private void findButton_Click(object sender, EventArgs e)
+            {
+                // finds and fills in student information off student Id search
+                fillStudentInfo();
+
+            }
     }
 }
 

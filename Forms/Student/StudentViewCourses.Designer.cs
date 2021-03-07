@@ -147,6 +147,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StudentViewCourses";
             this.Text = "StudentViewCourses";
+            this.Load += new System.EventHandler(this.StudentViewCourses_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseDataGrid)).EndInit();
             this.ResumeLayout(false);
