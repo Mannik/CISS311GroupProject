@@ -26,6 +26,7 @@ namespace CISS311GroupProject
 
         }
 
+        //check to see if the course is overbooked
         private Boolean noOverbooking(string selectedCourseId)
         {
             bool overbooked;
@@ -54,6 +55,7 @@ namespace CISS311GroupProject
             return overbooked;
         }
 
+        //initial load of course information for the course combobox
         private void StudentEnrollCourse_Load(object sender, EventArgs e)
         {
             using (conn = new SqlConnection(connectionString))
@@ -69,7 +71,7 @@ namespace CISS311GroupProject
         }
 
 
-
+        //fill the course data upon a combobox selection; fill the course form labels with select data
         private void fillCourseInfo(int selectedcourseId)
         {
             using (conn = new SqlConnection(connectionString))
@@ -101,6 +103,8 @@ namespace CISS311GroupProject
             Close();
         }
 
+
+        //clear course form labels
         private void clear()
         {
             courseTitleLabel.Text = string.Empty;
@@ -122,23 +126,59 @@ namespace CISS311GroupProject
             clear();
         }
 
+        //perform checks and enroll student in course
         private void enrollStudent(int studentId)
         {
-            noOverbooking(courseSelectionComboBox.SelectedValue.ToString());
+            if (isStudentAlreadyEnrolled(studentId, int.Parse(courseSelectionComboBox.SelectedValue.ToString())) == false)
+            {
+                noOverbooking(courseSelectionComboBox.SelectedValue.ToString());
+                using (conn = new SqlConnection(connectionString))
+                using (SqlCommand comd = new SqlCommand
+                    ("INSERT INTO coursexstudent (studentId, courseId) VALUES (@studentId, @courseId)", conn))
+                {
+                    conn.Open();
+                    comd.Parameters.AddWithValue("@studentId", studentId);
+                    comd.Parameters.AddWithValue("@courseId", courseSelectionComboBox.SelectedValue);
+                    comd.ExecuteScalar();
+                    MessageBox.Show("Course enrollment successful.");
+                }
+                increaseSeatCount();
+            }
+            else
+            {
+                MessageBox.Show("You're already registered for this class. Please choose another one.");
+            }
+            
+        }
+
+        //check to see if the student is already enrolled in the selected course
+        private Boolean isStudentAlreadyEnrolled(int formStudentId, int formCourseId)
+        {
+            bool queryResult;
 
             using (conn = new SqlConnection(connectionString))
             using (SqlCommand comd = new SqlCommand
-                ("INSERT INTO coursexstudent (studentId, courseId) VALUES (@studentId, @courseId)", conn))
+                ("SELECT * FROM coursexstudent WHERE studentId = @studentId AND courseId = @courseId", conn))
+            using (SqlDataAdapter adapter = new SqlDataAdapter(comd))
             {
-                conn.Open();
-                comd.Parameters.AddWithValue("@studentId", studentId);
-                comd.Parameters.AddWithValue("@courseId", courseSelectionComboBox.SelectedValue);
-                comd.ExecuteScalar();
-                MessageBox.Show("Course enrollment successful.");
+                comd.Parameters.AddWithValue("@courseId", formCourseId);
+                comd.Parameters.AddWithValue("@studentId", formStudentId);
+                DataTable courseXstudentTable = new DataTable();
+                adapter.Fill(courseXstudentTable);
+
+                if (courseXstudentTable.Rows.Count > 0)
+                {
+                    queryResult = true;
+                }
+                else
+                {
+                    queryResult = false;
+                }
             }
-            increaseSeatCount();
+            return queryResult;
         }
 
+        //add one to the seat total for the course to keep track of enrolled students
         private void increaseSeatCount()
         {
 

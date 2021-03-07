@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
 
-namespace CISS311GroupProject.Forms.Student
+namespace CISS311GroupProject
 {
     public partial class StudentViewCourses : Form
     {
