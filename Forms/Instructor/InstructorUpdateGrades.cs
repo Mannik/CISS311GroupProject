@@ -18,6 +18,8 @@ namespace CISS311GroupProject.Forms.Instructor
     {
         string connectionString;
         SqlConnection conn;
+        int currentCredits;
+
         public InstructorUpdateGrades()
         {
             InitializeComponent();
@@ -61,7 +63,7 @@ namespace CISS311GroupProject.Forms.Instructor
         private void courseComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             using (conn = new SqlConnection(connectionString))
-            using (SqlCommand comd = new SqlCommand("SELECT courseXstudent.studentId AS studentId, student.firstName + ' ' + student.lastName AS studentName " +
+            using (SqlCommand comd = new SqlCommand("SELECT courseXstudent.studentId AS studentId, student.firstName + ' ' + student.lastName AS studentName, student.credits as credits " +
                 "FROM courseXstudent JOIN student ON (courseXstudent.studentId =  student.studentId) WHERE courseXstudent.courseId = @courseId;", conn))
             using (SqlDataAdapter adapter = new SqlDataAdapter(comd))
             {
@@ -71,6 +73,8 @@ namespace CISS311GroupProject.Forms.Instructor
                 studentListBox.DisplayMember = "studentName";
                 studentListBox.ValueMember = "studentId";
                 studentListBox.DataSource = studentGradesTable;
+                DataRow dr = studentGradesTable.Rows[0];
+                currentCredits = int.Parse(dr["credits"].ToString());
             }
         }
 
@@ -106,6 +110,8 @@ namespace CISS311GroupProject.Forms.Instructor
             //check if new grade has been selected
             if (newGradeComboBox.Text != "--SELECT--")
             {
+                checkForPassingGrade();
+
                 //Write new grade to db
                 using (conn = new SqlConnection(connectionString))
                 using (SqlCommand comd = new SqlCommand("UPDATE courseXstudent SET grade = @updatedGrade WHERE courseId = @courseId AND studentId = @studentId;", conn))
@@ -116,6 +122,7 @@ namespace CISS311GroupProject.Forms.Instructor
                     comd.Parameters.AddWithValue("@studentId", studentListBox.SelectedValue);
                     comd.ExecuteScalar();
                 }
+
                 //move to next student in list or if last student, move back to top index
                 if (studentListBox.SelectedIndex >= (studentListBox.Items.Count - 1))
                 {
@@ -134,6 +141,57 @@ namespace CISS311GroupProject.Forms.Instructor
                 MessageBox.Show("Please Select A Grade");
             }
 
+        }
+
+        private void checkForPassingGrade()
+        {
+            using (conn = new SqlConnection(connectionString))
+            using (SqlCommand comd = new SqlCommand
+                ("SELECT grade FROM courseXstudent WHERE courseId = @courseId AND studentId = @studentId", conn))
+            using (SqlDataAdapter adapter = new SqlDataAdapter(comd))
+            {
+                DataTable studentGradeTable = new DataTable();
+                comd.Parameters.AddWithValue("@courseId", courseComboBox.SelectedValue);
+                comd.Parameters.AddWithValue("@studentId", studentListBox.SelectedValue);
+                adapter.Fill(studentGradeTable);
+                if (studentGradeTable.Rows.Count > 0)
+                {
+                    DataRow dr = studentGradeTable.Rows[0];
+                    if (dr["grade"].ToString() == string.Empty)
+                    {
+                        MessageBox.Show("Course credit was granted to the student.");
+                        currentCredits = currentCredits + 3;
+                        increaseCreditsOnPassingGrade();
+                    }
+                    else if (dr["grade"].ToString() == "F")
+                    {
+                        if (newGradeComboBox.Text != "F" || newGradeComboBox.Text != "--SELECT--")
+                        {
+                            MessageBox.Show("Course credit was granted to the student.");
+                            currentCredits = currentCredits + 3;
+                            increaseCreditsOnPassingGrade();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No course credit was granted to the student.");
+                    }
+                }
+            }
+        }
+
+        private void increaseCreditsOnPassingGrade()
+        {
+            using (conn = new SqlConnection(connectionString))
+            using (SqlCommand comd = new SqlCommand
+                ("UPDATE student SET credits = @credits WHERE studentId = @studentId", conn))
+            {
+                conn.Open();
+                comd.Parameters.AddWithValue("@courseId", courseComboBox.SelectedValue);
+                comd.Parameters.AddWithValue("@studentId", studentListBox.SelectedValue);
+                comd.Parameters.AddWithValue("@credits", currentCredits);
+                comd.ExecuteScalar();
+            }
         }
     }
 }
