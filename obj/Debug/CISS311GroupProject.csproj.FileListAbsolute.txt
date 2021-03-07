@@ -178,3 +178,5 @@ C:\Users\steve\Documents\GitHub\CISS311GroupProject\obj\Debug\CISS311GroupProjec
 C:\Users\steve\Documents\GitHub\CISS311GroupProject\obj\Debug\CISS311GroupProject.exe
 C:\Users\steve\Documents\GitHub\CISS311GroupProject\obj\Debug\CISS311GroupProject.pdb
 C:\Users\steve\Documents\repos\CISS311GroupProject\obj\Debug\CISS311GroupProject.StudentViewCourses.resources
+C:\Users\brent_000\Documents\CISS311GroupProject\obj\Debug\CISS311GroupProject.Forms.Instructor.InstructorUpdateGrades.resources
+C:\Users\brent_000\Documents\CISS311GroupProject\obj\Debug\CISS311GroupProject.StudentViewCourses.resources

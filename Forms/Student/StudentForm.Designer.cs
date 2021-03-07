@@ -86,6 +86,7 @@
             this.closeButton.TabIndex = 26;
             this.closeButton.Text = "&Close";
             this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // studentTotalCreditsLabel
             // 
@@ -160,6 +161,7 @@
             this.findButton.TabIndex = 18;
             this.findButton.Text = "&Find";
             this.findButton.UseVisualStyleBackColor = true;
+            this.findButton.Click += new System.EventHandler(this.findButton_Click);
             // 
             // studentIdTextBox
             // 
@@ -186,7 +188,7 @@
             this.enrollButton.TabIndex = 15;
             this.enrollButton.Text = "&Enroll";
             this.enrollButton.UseVisualStyleBackColor = true;
-            this.enrollButton.Click += new System.EventHandler(this.enrollButton_Click_1);
+            this.enrollButton.Click += new System.EventHandler(this.enrollButton_Click);
             // 
             // StudentForm
             // 
