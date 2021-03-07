@@ -13,7 +13,7 @@ using System.Collections;
 
 namespace CISS311GroupProject.Forms.Instructor
 {
-   
+
     public partial class InstructorUpdateGrades : Form
     {
         string connectionString;
@@ -41,7 +41,8 @@ namespace CISS311GroupProject.Forms.Instructor
         private void instructorComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             //When the instructor combo box selection is changed, update the options in the course combo box
-            if (!(String.IsNullOrEmpty(instructorComboBox.SelectedItem.ToString()))){
+            if (!(String.IsNullOrEmpty(instructorComboBox.SelectedItem.ToString())))
+            {
                 using (conn = new SqlConnection(connectionString))
                 using (SqlCommand comd = new SqlCommand("SELECT courseId, title FROM course WHERE employeeId = @employeeId;", conn))
                 using (SqlDataAdapter adapter = new SqlDataAdapter(comd))
@@ -53,7 +54,7 @@ namespace CISS311GroupProject.Forms.Instructor
                     courseComboBox.ValueMember = "courseId";
                     courseComboBox.DataSource = courseTable;
                 }
-            }      
+            }
         }
 
         //When the course combo box value changes, update the student list to the correct class
@@ -103,7 +104,7 @@ namespace CISS311GroupProject.Forms.Instructor
         private void saveButton_Click(object sender, EventArgs e)
         {
             //check if new grade has been selected
-            if(newGradeComboBox.Text != "--SELECT--")
+            if (newGradeComboBox.Text != "--SELECT--")
             {
                 //Write new grade to db
                 using (conn = new SqlConnection(connectionString))
@@ -116,7 +117,8 @@ namespace CISS311GroupProject.Forms.Instructor
                     comd.ExecuteScalar();
                 }
                 //move to next student in list or if last student, move back to top index
-                if(studentListBox.SelectedIndex >= (studentListBox.Items.Count - 1)){
+                if (studentListBox.SelectedIndex >= (studentListBox.Items.Count - 1))
+                {
                     studentListBox.SelectedIndex = studentListBox.TopIndex;
                 }
                 else
