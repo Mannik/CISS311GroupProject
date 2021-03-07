@@ -45,52 +45,7 @@ namespace CISS311GroupProject
 
         private void findButton_Click(object sender, EventArgs e)
         {
-            // Manage Course Form find button connection and Qry
-            // finds information off course Id search
-            using (conn = new SqlConnection(connectionString))
-            using (SqlCommand comd = new SqlCommand(
-                "SELECT course.courseId, course.title, course.employeeId, course.seats, course.maxSeats, course.isAvailable, " + 
-               "employee.employeeId, employee.firstName + ' ' + employee.lastName AS 'Name', employee.isAdmin FROM course JOIN employee " +
-               "ON course.employeeId = employee.employeeId WHERE course.courseId = @courseId", conn))
-            using (SqlDataAdapter adapter = new SqlDataAdapter(comd))
-            {
-                comd.Parameters.AddWithValue("@courseId", courseIdTextBox.Text);
-                DataTable courseTable = new DataTable();
-                adapter.Fill(courseTable);
-                if (courseTable.Rows.Count < 1)
-                {
-                    // displays no course found when no course is found and 
-                    // unenables textboxes etc. 
-                    ResetForm();
-                    currentCourseLabel.Text = "No Course Found.";
-
-                }
-                else
-                {
-                    DataRow dr = courseTable.Rows[0];
-                    courseId = int.Parse(dr["courseId"].ToString());
-                    currentCourseLabel.Text = dr["title"].ToString();
-                    maxSeatingLabel.Text = dr["maxSeats"].ToString();
-                    employeeIdLabel.Text = dr["employeeId"].ToString();
-                    InstructorNameLabel.Text = dr["Name"].ToString();
-                    // if statement to display the isAvailable bool to radiobuttons
-                    // courtesy to Zachary for the help
-                    if (dr["isAvailable"].ToString() == "True")
-                    {
-                        yesRadioButton.Checked = true;
-                    }
-                    else
-                    {
-                        noRadioButton.Checked = true;
-                    }
-                    // enables textboxes and buttons once it finds a course by Id
-                    updatedmaxSeatingTextBox.Enabled = true;
-                    newCourseTitleTextBox.Enabled = true;
-                    deleteButton.Enabled = true;
-                    updateButton.Enabled = true;
-                    newInstructorComboBox.Enabled = true;
-                }
-            }
+            findClass();
         }
 
         private void updateButton_Click(object sender, EventArgs e)
@@ -222,58 +177,65 @@ namespace CISS311GroupProject
                     }
 
                     courseId = id;
-                        // Manage Course Form find button connection and Qry
-                        // finds information off course Id search
-                        using (conn = new SqlConnection(connectionString))
-                        using (SqlCommand comd = new SqlCommand(
-                            "SELECT course.courseId, course.title, course.employeeId, course.seats, course.maxSeats, course.isAvailable, " +
-                           "employee.employeeId, employee.firstName + ' ' + employee.lastName AS 'Name', employee.isAdmin FROM course JOIN employee " +
-                           "ON course.employeeId = employee.employeeId WHERE course.courseId = @courseId", conn))
-                        using (SqlDataAdapter adapter = new SqlDataAdapter(comd))
-                        {
-                            comd.Parameters.AddWithValue("@courseId", courseId);
-                            DataTable courseTable = new DataTable();
-                            adapter.Fill(courseTable);
-                            if (courseTable.Rows.Count < 1)
-                            {
-                                // displays no course found when no course is found and 
-                                // unenables textboxes etc. 
-                                ResetForm();
-                                currentCourseLabel.Text = "No Course Found.";
+                    
+                };
 
-                            }
-                            else
-                            {
-                                DataRow dr = courseTable.Rows[0];
-                                courseId = int.Parse(dr["courseId"].ToString());
-                                currentCourseLabel.Text = dr["title"].ToString();
-                                maxSeatingLabel.Text = dr["maxSeats"].ToString();
-                                employeeIdLabel.Text = dr["employeeId"].ToString();
-                                InstructorNameLabel.Text = dr["Name"].ToString();
-                                // if statement to display the isAvailable bool to radiobuttons
-                                // courtesy to Zachary for the help
-                                if (dr["isAvailable"].ToString() == "True")
-                                {
-                                    yesRadioButton.Checked = true;
-                                }
-                                else
-                                {
-                                    noRadioButton.Checked = true;
-                                }
-                                // enables textboxes and buttons once it finds a course by Id
-                                updatedmaxSeatingTextBox.Enabled = true;
-                                newCourseTitleTextBox.Enabled = true;
-                                deleteButton.Enabled = true;
-                                updateButton.Enabled = true;
-                                newInstructorComboBox.Enabled = true;
-                            }
-                        }
-
-                    };
-
+               
                 search.ShowDialog(this);
+                courseIdTextBox.Text = courseId.ToString();
+                findClass();
             }
         }
+        private void findClass()
+            {
+                // Manage Course Form find button connection and Qry
+                // finds information off course Id search
+                using (conn = new SqlConnection(connectionString))
+                using (SqlCommand comd = new SqlCommand(
+                    "SELECT course.courseId, course.title, course.employeeId, course.seats, course.maxSeats, course.isAvailable, " +
+                   "employee.employeeId, employee.firstName + ' ' + employee.lastName AS 'Name', employee.isAdmin FROM course JOIN employee " +
+                   "ON course.employeeId = employee.employeeId WHERE course.courseId = @courseId", conn))
+                using (SqlDataAdapter adapter = new SqlDataAdapter(comd))
+                {
+                    comd.Parameters.AddWithValue("@courseId", courseIdTextBox.Text);
+                    DataTable courseTable = new DataTable();
+                    adapter.Fill(courseTable);
+                    if (courseTable.Rows.Count < 1)
+                    {
+                        // displays no course found when no course is found and 
+                        // unenables textboxes etc. 
+                        ResetForm();
+                        currentCourseLabel.Text = "No Course Found.";
+
+                    }
+                    else
+                    {
+                        DataRow dr = courseTable.Rows[0];
+                        courseId = int.Parse(dr["courseId"].ToString());
+                        currentCourseLabel.Text = dr["title"].ToString();
+                        maxSeatingLabel.Text = dr["maxSeats"].ToString();
+                        employeeIdLabel.Text = dr["employeeId"].ToString();
+                        InstructorNameLabel.Text = dr["Name"].ToString();
+                        // if statement to display the isAvailable bool to radiobuttons
+                        // courtesy to Zachary for the help
+                        if (dr["isAvailable"].ToString() == "True")
+                        {
+                            yesRadioButton.Checked = true;
+                        }
+                        else
+                        {
+                            noRadioButton.Checked = true;
+                        }
+                        // enables textboxes and buttons once it finds a course by Id
+                        updatedmaxSeatingTextBox.Enabled = true;
+                        newCourseTitleTextBox.Enabled = true;
+                        deleteButton.Enabled = true;
+                        updateButton.Enabled = true;
+                        newInstructorComboBox.Enabled = true;
+                    }
+                }
+            }
+        
 
         private void courseIdTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {

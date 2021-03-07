@@ -66,7 +66,7 @@ namespace CISS311GroupProject.Forms.Instructor
                 DataRow dr = selectedCourseTable.Rows[0];
                 courseNameLabel.Text = dr["title"].ToString();
                 courseIdLabel.Text = dr["courseId"].ToString();
-                if (dr["Availability"].ToString() == "0")
+                if (dr["Availability"].ToString() == "True")
                 {
                     enrollmentStatusLabel.Text = "Class enrollment is open.";
                 }

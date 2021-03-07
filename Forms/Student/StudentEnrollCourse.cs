@@ -32,7 +32,7 @@ namespace CISS311GroupProject
             bool overbooked;
 
             using (conn = new SqlConnection(connectionString))
-            using (SqlCommand comd = new SqlCommand("SELECT seats, maxSeats from course where courseId = @courseId", conn))
+            using (SqlCommand comd = new SqlCommand("SELECT seats, maxSeats, isAvailable from course where courseId = @courseId", conn))
             using (SqlDataAdapter adapter = new SqlDataAdapter(comd))
             {
                 comd.Parameters.AddWithValue("@courseId", selectedCourseId);
@@ -40,7 +40,7 @@ namespace CISS311GroupProject
                 adapter.Fill(checkSeats);
                 DataRow dr = checkSeats.Rows[0];
 
-                if (int.Parse(dr["seats"].ToString()) >= int.Parse(dr["maxSeats"].ToString()))
+                if (dr["isAvailable"].ToString() == "False")
                 {
                     overbooked = true;
                     MessageBox.Show("Course is overbooked. Not available for registration.");
@@ -87,7 +87,7 @@ namespace CISS311GroupProject
                 courseTitleLabel.Text = dr["title"].ToString();
                 instructorLabel.Text = dr["Name"].ToString();
                 seatCountLabel.Text = dr["seats"].ToString();
-                if (int.Parse(dr["seats"].ToString()) > int.Parse(dr["maxSeats"].ToString()))
+                if (dr["isAvailable"].ToString() == "False")
                 {
                     isAvailableLabel.Text = "Closed";
                 }
@@ -131,18 +131,23 @@ namespace CISS311GroupProject
         {
             if (isStudentAlreadyEnrolled(studentId, int.Parse(courseSelectionComboBox.SelectedValue.ToString())) == false)
             {
-                noOverbooking(courseSelectionComboBox.SelectedValue.ToString());
-                using (conn = new SqlConnection(connectionString))
-                using (SqlCommand comd = new SqlCommand
-                    ("INSERT INTO coursexstudent (studentId, courseId) VALUES (@studentId, @courseId)", conn))
+                if (!noOverbooking(courseSelectionComboBox.SelectedValue.ToString()))
                 {
-                    conn.Open();
-                    comd.Parameters.AddWithValue("@studentId", studentId);
-                    comd.Parameters.AddWithValue("@courseId", courseSelectionComboBox.SelectedValue);
-                    comd.ExecuteScalar();
-                    MessageBox.Show("Course enrollment successful.");
+                    using (conn = new SqlConnection(connectionString))
+                    using (SqlCommand comd = new SqlCommand
+                        ("INSERT INTO coursexstudent (studentId, courseId) VALUES (@studentId, @courseId)", conn))
+                    {
+                        conn.Open();
+                        comd.Parameters.AddWithValue("@studentId", studentId);
+                        comd.Parameters.AddWithValue("@courseId", courseSelectionComboBox.SelectedValue);
+                        comd.ExecuteScalar();
+                        MessageBox.Show("Course enrollment successful.");
+                    }
+                    increaseSeatCount();
                 }
-                increaseSeatCount();
+                else 
+                {
+                }
             }
             else
             {
