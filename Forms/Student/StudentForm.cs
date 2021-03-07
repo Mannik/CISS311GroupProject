@@ -27,23 +27,6 @@ namespace CISS311GroupProject
     .ConnectionString;
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //before opening the child form check for student ID
-            if (studentIdTextBox.Text == string.Empty)
-            {
-                MessageBox.Show("Please enter a student ID.");
-                studentIdTextBox.Focus();
-            }
-            else
-            {
-                StudentViewCourses studentViewCourses = new StudentViewCourses(int.Parse(studentIdTextBox.Text));
-                studentViewCourses.ShowDialog();
-            }
-        }
-
-
         private void fillStudentInfo()
         {
             //fill in the student information labels with the data from the select query
@@ -92,7 +75,7 @@ namespace CISS311GroupProject
                 else
                 {
                     MessageBox.Show("Sorry, you do not have enough credits to graduate. You need at least 120 and you only have " + dr["credits"].ToString() + ".");
-                    remainingCreditsLabel.Text = "Remaining Credits: " + (120 - int.Parse(dr["credits"].ToString()));
+                    remainingCreditsLabel.Text = (120 - int.Parse(dr["credits"].ToString())).ToString();
                 }
 
             }
