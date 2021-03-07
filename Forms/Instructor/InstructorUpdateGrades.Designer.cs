@@ -29,9 +29,11 @@ namespace CISS311GroupProject.Forms.Instructor
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InstructorUpdateGrades));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.newGradeComboBox = new System.Windows.Forms.ComboBox();
             this.currentGradeLabel = new System.Windows.Forms.Label();
             this.studentNameLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -43,7 +45,6 @@ namespace CISS311GroupProject.Forms.Instructor
             this.courseComboBox = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.studentListBox = new System.Windows.Forms.ListBox();
-            this.newGradeComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +53,7 @@ namespace CISS311GroupProject.Forms.Instructor
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(13, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 15);
+            this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Instructor:";
             // 
@@ -61,7 +62,7 @@ namespace CISS311GroupProject.Forms.Instructor
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 41);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 15);
+            this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Course:";
             // 
@@ -81,12 +82,27 @@ namespace CISS311GroupProject.Forms.Instructor
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Selected Student";
             // 
+            // newGradeComboBox
+            // 
+            this.newGradeComboBox.FormattingEnabled = true;
+            this.newGradeComboBox.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C",
+            "D",
+            "F"});
+            this.newGradeComboBox.Location = new System.Drawing.Point(106, 84);
+            this.newGradeComboBox.Name = "newGradeComboBox";
+            this.newGradeComboBox.Size = new System.Drawing.Size(95, 21);
+            this.newGradeComboBox.TabIndex = 9;
+            this.newGradeComboBox.Text = "--SELECT--";
+            // 
             // currentGradeLabel
             // 
             this.currentGradeLabel.AutoSize = true;
             this.currentGradeLabel.Location = new System.Drawing.Point(102, 56);
             this.currentGradeLabel.Name = "currentGradeLabel";
-            this.currentGradeLabel.Size = new System.Drawing.Size(0, 15);
+            this.currentGradeLabel.Size = new System.Drawing.Size(0, 13);
             this.currentGradeLabel.TabIndex = 8;
             // 
             // studentNameLabel
@@ -94,7 +110,7 @@ namespace CISS311GroupProject.Forms.Instructor
             this.studentNameLabel.AutoSize = true;
             this.studentNameLabel.Location = new System.Drawing.Point(102, 29);
             this.studentNameLabel.Name = "studentNameLabel";
-            this.studentNameLabel.Size = new System.Drawing.Size(0, 15);
+            this.studentNameLabel.Size = new System.Drawing.Size(0, 13);
             this.studentNameLabel.TabIndex = 7;
             // 
             // label5
@@ -102,7 +118,7 @@ namespace CISS311GroupProject.Forms.Instructor
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(6, 87);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 15);
+            this.label5.Size = new System.Drawing.Size(83, 13);
             this.label5.TabIndex = 6;
             this.label5.Text = "Updated Grade:";
             // 
@@ -121,7 +137,7 @@ namespace CISS311GroupProject.Forms.Instructor
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(6, 56);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 15);
+            this.label4.Size = new System.Drawing.Size(76, 13);
             this.label4.TabIndex = 5;
             this.label4.Text = "Current Grade:";
             // 
@@ -130,7 +146,7 @@ namespace CISS311GroupProject.Forms.Instructor
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(6, 29);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 15);
+            this.label3.Size = new System.Drawing.Size(78, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Student Name:";
             // 
@@ -167,7 +183,7 @@ namespace CISS311GroupProject.Forms.Instructor
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(16, 82);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(107, 15);
+            this.label6.Size = new System.Drawing.Size(93, 13);
             this.label6.TabIndex = 8;
             this.label6.Text = "Enrolled Students:";
             // 
@@ -179,21 +195,6 @@ namespace CISS311GroupProject.Forms.Instructor
             this.studentListBox.Size = new System.Drawing.Size(333, 160);
             this.studentListBox.TabIndex = 9;
             this.studentListBox.SelectedIndexChanged += new System.EventHandler(this.studentListBox_SelectedIndexChanged);
-            // 
-            // newGradeComboBox
-            // 
-            this.newGradeComboBox.FormattingEnabled = true;
-            this.newGradeComboBox.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C",
-            "D",
-            "F"});
-            this.newGradeComboBox.Location = new System.Drawing.Point(106, 84);
-            this.newGradeComboBox.Name = "newGradeComboBox";
-            this.newGradeComboBox.Size = new System.Drawing.Size(95, 21);
-            this.newGradeComboBox.TabIndex = 9;
-            this.newGradeComboBox.Text = "--SELECT--";
             // 
             // InstructorUpdateGrades
             // 
@@ -208,6 +209,7 @@ namespace CISS311GroupProject.Forms.Instructor
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InstructorUpdateGrades";
             this.Text = "InstructorUpdateGrades";
             this.Load += new System.EventHandler(this.InstructorUpdateGrades_Load);

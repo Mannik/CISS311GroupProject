@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
             this.addStudentBtn = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.Button();
             this.addCourseBtn = new System.Windows.Forms.Button();
@@ -128,6 +129,7 @@
             this.Controls.Add(this.addCourseBtn);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.addStudentBtn);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminForm";
             this.Text = "Administrator:";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
